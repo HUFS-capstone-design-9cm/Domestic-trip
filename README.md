@@ -19,7 +19,9 @@
   - git add . : 변경된 모든 파일 스테이징 영역에 추가 || git add [올리고 싶은 파일]
   - git commit -m "커밋 메시지"
   - git push origin [브랜치이름]
-  
+
+### 반드시 branch생성 후 푸시할 것!
+
 # commit 컨벤션
 - FEATURE : 기능을 추가 또는 수정
 - ENV: 개발 환경을 추가 또는 수정 (eslint 변경, dockerfile 변경 등)

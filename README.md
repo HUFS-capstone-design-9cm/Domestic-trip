@@ -2,11 +2,11 @@
 
 
 # git 사용법
-- 1.git clone [git repository 경로]
+- 1. git clone [git repository 경로]
 
-- 2.cd [프로젝트 이름] (수정한 파일이 있는 디렉토리로 이동)
+- 2. cd [프로젝트 이름] (수정한 파일이 있는 디렉토리로 이동)
 
-- 3.branch
+- 3. branch
   - git branch [브랜치 이름] : 브랜치 생성
   - git checkout [브랜치이름] : 브랜치로 이동
   - git checkout -b [브랜치이름] : 브랜치 생성 & 해당 브랜치로 이동 

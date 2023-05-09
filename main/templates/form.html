@@ -5,11 +5,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hello world</h1>
-    <p>hello</p>
-
-    {% for question in questions %}
-        <p>{{ question.number }} : {{ question.content }}</p>
-    {% endfor %}
+    <form action="/result/" method="post">
+        {% csrf_token %}
+        {% for question in questions %}
+            <h3>{{ question.num }}. {{ question.content }}</h3>
+            {% for choice in question.choice_set.all %}
+                <div>
+                    <input type="radio" name="question-{{ question.pk }}" id="choice-{{ choice.pk }}" value="{{ choice.traveler_id.pk }}">
+                    <label for="choice-{{ choice.pk }}">{{ forloop.counter }}. {{ choice.content }}</label>
+                </div>
+            {% endfor %}
+        <hr>
+        {% endfor %}
+        <input type="submit" value="제출하기">
+    </form>
 </body>
 </html>

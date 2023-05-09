@@ -1,23 +1,61 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewprot" content="width=device-width, initial-scale=1.0">
+    <title>테스트페이지</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 </head>
 <body>
-    <form action="/result/" method="post">
-        {% csrf_token %}
-        {% for question in questions %}
-            <h3>{{ question.num }}. {{ question.content }}</h3>
-            {% for choice in question.choice_set.all %}
-                <div>
-                    <input type="radio" name="question-{{ question.pk }}" id="choice-{{ choice.pk }}" value="{{ choice.traveler_id.pk }}">
-                    <label for="choice-{{ choice.pk }}">{{ forloop.counter }}. {{ choice.content }}</label>
+    <section id="survey">
+        <div class="wrapper">
+            <form action="/result/" method="post">
+                {% csrf_token %}
+                {% for question in questions %}
+                <div class="test">
+                    <div class="question_container">
+                        <h3 class="num">{{ question.num }} / {{ questions.count }}</h3>
+                        <h3 class="question">{{ question.content }}</h3>
+                    </div>
+                    <div class="answer">
+                        {% for choice in question.choice_set.all %}
+                        <div>
+                            <input 
+                                   type="radio" 
+                                   name="question-{{ question.pk }}" 
+                                   id="choice-{{ choice.pk }}" 
+                                   value="{{ choice.category }}"
+                                   />
+                            <label for="choice-{{ choice.pk }}">
+                                {{ forloop.counter }}. {{ choice.content }}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% if not forloop.first %}
+                        <div class="btn_wrap btn_sort">
+                    {% else %}
+                        <div class="btn_wrap">
+                    {% endif %}
+                    {% if not forloop.first %}
+                        <button class="prev_btn">이전</button>
+                    {% endif %}
+                    {% if not forloop.last %}
+                        <button class="next_btn">다음</button>
+                    {% else %}
+                        <input type="submit" value="제출" class="submit_btn" />
+                    {% endif %}
+                    </div>
                 </div>
-            {% endfor %}
-        <hr>
-        {% endfor %}
-        <input type="submit" value="제출하기">
-    </form>
+                {% endfor %}
+            </div>
+            </form>
+        </div>
+    </section>
+    <script type="text/javascript" src="{% static 'js/form.js' %}"></script>
 </body>
 </html>

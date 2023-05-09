@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'MBIT.urls'
+ROOT_URLCONF = 'travelerMBTI.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'MBIT.wsgi.application'
+WSGI_APPLICATION = 'travelerMBTI.wsgi.application'
 
 
 # Database

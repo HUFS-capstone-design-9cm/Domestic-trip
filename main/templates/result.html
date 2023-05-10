@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewprot" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="어쩌다 국내여행" />
+    <meta property="og:img" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="나의 여행 성향은?" />
+
+    <title>결과페이지</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/result.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+</head>
+<body>
+    <section id="main_contents">
+        <div class="wrapper">
+            <div class="result">
+                <div class=""titles>
+                    <h3>본투비 트래블러</h3>
+                    <h1>모노클로니우스</h1>
+                </div>
+                <div class="result_img">
+                    <img src="{% static 'image/' %}{{ traveler.personality }}.png" alt="이미지 없음">
+                </div>
+            </div>
+            <div class="result_explains">
+                <div class="explain">
+                    <h3 class="title">내 유형은 {{ traveler.content }} {{ traveler.name }}?!</h3>
+                    <ul>
+                        <li>이거는</li>
+                        <li>이렇고</li>
+                        <li>저렇습니다.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="space">
+                <h3>내 여행지는 {{ traveler.region }}</h3>
+                <div class="voyage">
+                    <ul>
+                        <li>여기</li>
+                        <li>거기</li>
+                        <li>저기</li>
+                        <li>이쪽</li>
+                        <li>저쪽</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="research">
+                <div class="research_btn">
+                    <a href="#">
+                        <button class="research_form" type="button">만족도 조사하고 여행지 추천받기</button>
+                    </a>
+                </div>
+            </div>
+            <div class="buttons">
+                <ul>
+                    <li>
+                        <h3>다시할랭</h3>
+                        <a href="/">
+                            <button type="button">테스트 다시하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <h3>다른 유형도 볼랭</h3>
+                        <a href="#">
+                            <button type="button">다른 결과 보기</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="share">
+                <div class="url">
+                    <button class="copy_btn" type="button">URL 복사하기</button>
+                </div>
+                <div class="facebook">
+                    <button class="face_share" type="button">페북 공유</button>
+                </div>
+                <div class="kakao">
+                    <button class="kak_share" type="button">카톡 공유</button>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="{% static 'image/logo.png' %}" alt="logo" height="60px" width="100px">
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="{% static 'js/result.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+[
+{
+    "model": "main.question",
+    "pk": 1,
+    "fields": {
+        "num": 1,
+        "content": "여행을 떠나기로 결심한 당신! 무심코 방을 보는데... 그 때 당신의 눈에 들어온 것은?"
+    }
+},
+{
+    "model": "main.question",
+    "pk": 2,
+    "fields": {
+        "num": 2,
+        "content": "방학을 맞아 여행을 다녀오기로 계획한 당신, 누구와 함께 가시나요?"
+    }
+},
+{
+    "model": "main.question",
+    "pk": 3,
+    "fields": {
+        "num": 3,
+        "content": "여행지를 고민하는 중, 당신은 어떤 여행지를 가고 싶으신가요?"
+    }
+},
+{
+    "model": "main.question",
+    "pk": 4,
+    "fields": {
+        "num": 4,
+        "content": "숙소는 어디가 좋을까?"
+    }
+},
+{
+    "model": "main.question",
+    "pk": 5,
+    "fields": {
+        "num": 5,
+        "content": "나른한 오후, 당신은 낮잠을 자다가 꿈을 꾸게 되는데... 꿈 속에서 당신은 어딘가를 향해 바쁘게 가고 있었다. 그 어딘가는?"
+    }
+},
+{
+    "model": "main.question",
+    "pk": 6,
+    "fields": {
+        "num": 6,
+        "content": "목적지를 향해 가던 도중 무심코 돌아본 곳에서 마주한 좁은 골목길, 그 끝에 있는 작은 가게! 당신은 그곳에..."
+    }
+},
+{
+    "model": "main.question",
+    "pk": 7,
+    "fields": {
+        "num": 7,
+        "content": "게스트 하우스에 오게 된 당신, 처음 보는 사람과 같은 방에서 만나게 되었다면?"
+    }
+},
+{
+    "model": "main.question",
+    "pk": 8,
+    "fields": {
+        "num": 8,
+        "content": "짐도 풀었겠다 거리 구경에 나선 당신, 길거리를 구경하다 진~짜 맘에 드는 물건 발견! 가격표를 보니... 0이 엄청 많다..."
+    }
+},
+{
+    "model": "main.question",
+    "pk": 9,
+    "fields": {
+        "num": 9,
+        "content": "걷다가 다리가 아파온다..."
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 1,
+    "fields": {
+        "content": "노트북",
+        "question_id": 1,
+        "category": "J"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 2,
+    "fields": {
+        "content": "캐리어",
+        "question_id": 1,
+        "category": "P"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 3,
+    "fields": {
+        "content": "지친 마음을 달래기 위해 혼자 다녀와야지~",
+        "question_id": 2,
+        "category": "I"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 4,
+    "fields": {
+        "content": "지루한 일상을 벗어나 오게 된 여행인데 친구들과 즐겁게 다녀올거야!",
+        "question_id": 2,
+        "category": "E"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 5,
+    "fields": {
+        "content": "조용하고 고즈넉한 분위기의 자연적인 여행지가 좋아!",
+        "question_id": 3,
+        "category": "I"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 6,
+    "fields": {
+        "content": "시끌벅적하고 즐길 거리, 볼거리가 많은 여행지가 좋아!",
+        "question_id": 3,
+        "category": "E"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 7,
+    "fields": {
+        "content": "무조건 5성급 호텔",
+        "question_id": 4,
+        "category": "R"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 8,
+    "fields": {
+        "content": "잠만자면 되지 캡슐호텔",
+        "question_id": 4,
+        "category": "B"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 9,
+    "fields": {
+        "content": "당신에게 익숙한 장소",
+        "question_id": 5,
+        "category": "J"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 10,
+    "fields": {
+        "content": "한번도 가보지 못한 미지의 장소",
+        "question_id": 5,
+        "category": "P"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 11,
+    "fields": {
+        "content": "들어가본다",
+        "question_id": 6,
+        "category": "P"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 12,
+    "fields": {
+        "content": "가던 길 간다",
+        "question_id": 6,
+        "category": "J"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 13,
+    "fields": {
+        "content": "먼저 인사를 건네며 친해져본다",
+        "question_id": 7,
+        "category": "E"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 14,
+    "fields": {
+        "content": "상대방이 말을 걸 때까지 기다렸다가 자리에서 일어난다",
+        "question_id": 7,
+        "category": "I"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 15,
+    "fields": {
+        "content": "그게 무슨 상관 내가 갖고 싶은데! 바로 산다",
+        "question_id": 8,
+        "category": "R"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 16,
+    "fields": {
+        "content": "살포시 내려놓는다",
+        "question_id": 8,
+        "category": "B"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 17,
+    "fields": {
+        "content": "택시를 잡는다",
+        "question_id": 9,
+        "category": "R"
+    }
+},
+{
+    "model": "main.choice",
+    "pk": 18,
+    "fields": {
+        "content": "주저앉아 쉴 곳을 찾아본다",
+        "question_id": 9,
+        "category": "B"
+    }
+},
+{
+    "model": "main.traveler",
+    "pk": 1,
+    "fields": {
+        "name": "본투비 트래블러 모노클로니우스",
+        "region": "해남",
+        "content": "지갑이 가벼운 만큼 발걸음도 가볍다! 어차피 남는 건 친구들과 찍은 사진이지 돈이 드는 것도 아닌데. 효율적으로 사진 찍기 위해선 계획이 필수!",
+        "count": 0,
+        "personality": "EBJ"
+    }
+},
+{
+    "model": "main.traveler",
+    "pk": 2,
+    "fields": {
+        "name": "혼자도 외롭지 않은 프테라노돈",
+        "region": "단양",
+        "content": "가성비 여행의 고수! 나 혼자 내가 가고싶은 곳만 쏙쏙 골라서 다니는 걸 좋아하니까.",
+        "count": 0,
+        "personality": "IBJ"
+    }
+},
+{
+    "model": "main.traveler",
+    "pk": 3,
+    "fields": {
+        "name": "즉흥적인 모험가 스테고사우루스",
+        "region": "임실",
+        "content": "사랑하는 이들과 함께라면 두려울 것이 없다. 발이 이끄는 대로 가다보면 어딘가 도착은 하겠지. 난 그저 즐기기만 하면  될뿐.",
+        "count": 0,
+        "personality": "EBP"
+    }
+},
+{
+    "model": "main.traveler",
+    "pk": 4,
+    "fields": {
+        "name": "모험가의 자질을 가진 안킬로사우루스",
+        "region": "순창",
+        "content": "안킬로사우루스 설명-!!",
+        "count": 0,
+        "personality": "IBP"
+    }
+},
+{
+    "model": "main.traveler",
+    "pk": 5,
+    "fields": {
+        "name": "완벽한 여행의 왕! 티라노사우루스 렉스",
+        "region": "여수",
+        "content": "왔노라! 보았노라! 놀았노라!",
+        "count": 0,
+        "personality": "ERJ"
+    }
+},
+{
+    "model": "main.traveler",
+    "pk": 6,
+    "fields": {
+        "name": "우아하게 바다를 누비는 모사사우루스",
+        "region": "강릉",
+        "content": "모사사우르스 설명-!!",
+        "count": 0,
+        "personality": "IRJ"
+    }
+},
+{
+    "model": "main.traveler",
+    "pk": 7,
+    "fields": {
+        "name": "자유로운 영혼을 가진 파라사우롤로푸스",
+        "region": "인천",
+        "content": "정승같이 벌었으니 개같이 써야지!",
+        "count": 0,
+        "personality": "ERP"
+    }
+},
+{
+    "model": "main.traveler",
+    "pk": 8,
+    "fields": {
+        "name": "여유롭게 침엽수를 뜯는 대식가 브라키오사우루스",
+        "region": "부산",
+        "content": "이리 치여 저리 치여 사는데 여행까지 그럴 순 없지! 여행은 돈 쓰는 맛이거든. 맛있는 거 먹고 멋있는 기념품 모으고 좋은 곳에서 자면 끝!",
+        "count": 0,
+        "personality": "IRP"
+    }
+}
+]

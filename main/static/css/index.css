@@ -12,6 +12,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @keyframes move {
     0% {
             transition: transform;
@@ -34,11 +41,16 @@ html {
 }
 
 body {
+    background-image: url("../image/backgroundMain.png");
+    background-repeat: no-repeat;
+    background-size: 70vw 100vh;
+    background-position: center;
+    overflow: hidden;
     width: 100%;
     height: 100%;
-    color: white;
+    color: green;
     font-family: "Bazzi";
-    background-color: aquamarine;
+    background-color: beige;
 }
 
 #main_contents {
@@ -62,6 +74,7 @@ body {
     font-size: 50px;
     padding-bottom: 15px;
     text-align: center;
+    margin-top: 100px;
 }
 
 .intro {
@@ -81,11 +94,8 @@ body {
 
 .animation .image {
     border-radius: 30px;
-    height: 300px;
-    width: 500px;
-    padding-bottom: 15px;
-    margin-bottom: 50px;
-
+    height: 400px;
+    width: 550px;
     animation-name: move;
     animation-duration: 5s;
     animation-iteration-count: infinite;
@@ -98,6 +108,14 @@ body {
     margin-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 10px;
+}
+
+.nick .name {
+    width: 250px;
+    height: 40px;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 7px 7px 5px grey;
 }
 
 .button {
@@ -117,7 +135,6 @@ body {
     background-color: white;
     color: green;
     cursor: pointer;
-    margin-bottom: 20px;
 }
 
 .button button:hover {
@@ -140,7 +157,7 @@ body {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    padding: 20px 0 30px;
+    padding-top: 20px;
 }
 
 .logo {

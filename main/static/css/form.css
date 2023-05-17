@@ -12,12 +12,22 @@
     font-style: normal;
 }
 
-body {
-    background-color: aquamarine;
-    color: green;
-    font-family: "Bazzi";
-    overflow: hidden;
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
+
+body {
+        background-image: url('../image/background1.png');
+        background-repeat: repeat-y;
+        background-size: 100vw 100vh;
+        background-color: beige;
+        color: green;
+        font-family: "Bazzi";
+        overflow: hidden;
+    }
 
 #survey {
     display: flex;
@@ -46,7 +56,17 @@ body {
 }
 
 .question_container .question {
-    font-family: "GoryeongStrawberr";
+    font-family: "GoryeongStrawberry";
+}
+
+.question_container .form_img {
+    width: 300px;
+    height: 324px;
+}
+
+.question_container .form_img img {
+    width: 100%;
+    height: 100%;
 }
 
 .answer {

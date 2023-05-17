@@ -12,10 +12,21 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    background-color: aquamarine;
+    background-color: beige;
     color: green;
     font-family: "Bazzi";
+    background-image: url('../image/background_result.png');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
 }
 
 button {
@@ -52,6 +63,7 @@ button:hover {
     height: 100%;
     max-width: 600px;
     padding-bottom: 50px;
+    background-color: white;
 }
 
 .result {
@@ -170,18 +182,55 @@ button:hover {
     margin-top: 50px;
 }
 
+.share h3 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: green;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
 .share button {
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
+    margin-left: 5px;
+    margin-right: 5px; 
+}
+
+.share .share_btn {
+    display: inline-block;
+}
+
+.copy_btn {
+    background-color: plum;
+    height: 100px;
+    width: 100px;
+
+    border: 1px solid black;
 }
 
 .face_share {
+    background-image: url(../img/facebook.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+    width: 100px;
     background-color: #3b5998;
     color: white;
+
+    border: 1px solid black;
 }
 
 .kak_share {
+    background-image: url(../img/kakao.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+    width: 100px;
     background-color: #f1d900;
     color: black;
+
+    border: 1px solid black;
 }
 
 .buttons h3 {
@@ -201,5 +250,4 @@ button:hover {
     text-align: center;
     line-height: 1.5;
     padding-top: 10px;
-    margin-top: 50px;
 }

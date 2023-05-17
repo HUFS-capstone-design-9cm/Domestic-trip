@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Kakao 지도 시작하기</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+</head>
+<body>
+	<div id="map" style="width:500px;height:400px;"></div>
+    <h1>웹 페이지에 나타내보기.</h1>
+
+    <hr/>
+
+    <div class="question-box">
+        <h2>카카오 길찾기 OpenAPI를 이용</h2>
+        <ul id="names-q1">
+        </ul>
+    </div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c963b5273576eb43b2c68c2088700c47"></script>
+    <script>
+        let routes = JSON.parse("{{ route_js | escapejs }}");
+        var start = routes.start;
+        var ways = [];
+        const bar = "|";
+        var waypoints = "";
+        var origin = {"x": start.lat, "y": start.lng};
+        
+        for(let i = 2; i <= Object.keys(routes).length; i++){
+            for(route of Object.keys(routes)){
+                if(routes[route].sequence == Object.keys(routes).length) {
+                    var destination = {"x": routes[route].lat, "y": routes[route].lng};
+                }
+                else {
+                    if (routes[route].sequence == i) {
+                        ways.push({"x": routes[route].lat, "y": routes[route].lng})
+                    }
+                }
+        }   
+        }
+        for (way of ways){
+            if (waypoints != ""){
+                waypoints = waypoints + bar + way.y + "," + way.x 
+            }
+            else {
+                waypoints = way.y + "," + way.x
+            }
+        }
+
+        $.ajax({
+              type: "GET",
+              url: "https://apis-navi.kakaomobility.com/v1/directions?origin="+origin.y+","+origin.x+"&destination="+destination.y+","+destination.x+"&waypoints="+waypoints+"&priority=RECOMMEND&car_fuel=GASOLINE&car_hipass=false&alternatives=false&road_details=false",
+              headers:{
+                  Authorization: "KakaoAK 479cc207c3f10290fe4d4afc2ddec48d",
+              }
+        }).done(function (msg) {
+            console.log(msg);
+            var container = document.getElementById('map');
+            var options = {
+                center: new kakao.maps.LatLng(origin.x, origin.y),
+                level: 10
+            };
+
+            var map = new kakao.maps.Map(container, options);
+            
+            // 마커 생성하기
+            for (route of Object.keys(routes)) {
+                var markerPosition  = new kakao.maps.LatLng(routes[route].lat, routes[route].lng); 
+
+                // 마커를 생성합니다
+                var marker = new kakao.maps.Marker({
+                    map: map,
+                    position: markerPosition
+                }); 
+            }
+            
+            
+            
+            var guides = msg.routes[0].sections;
+            var markers = [];
+            var linePath;
+            var lineLine = new kakao.maps.Polyline();
+            
+            for (guide of guides) {
+                for (var i of guide.guides) {
+                    markers.push({"x": i.x, "y": i.y});
+                }
+            }
+
+            for (var k = 0; k < markers.length; k++ ){
+                if (k != 0) {
+                    linePath = [
+                        new kakao.maps.LatLng(markers[k-1].y, markers[k-1].x), 
+                        new kakao.maps.LatLng(markers[k].y, markers[k].x)]
+                }
+                lineLine.setPath(linePath);
+                
+                var polyline = new kakao.maps.Polyline({
+                    map: map,
+                    path: linePath, // 선을 구성하는 좌표배열 입니다
+                    strokeWeight: 5, // 선의 두께 입니다
+                    strokeColor: '#db4040', // 선의 색깔입니다
+                    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                    strokeStyle: 'solid' // 선의 스타일입니다
+                });
+            }
+            // 지도에 표시할 선을 생성합니다
+            $("#names-q1").empty(); //화면에 출력 전에 지워주는 코드
+            let mise = msg.routes[0].summary;
+            let duration = (mise.duration/60).toFixed();
+            $("#names-q1").append(`<li>통행요금 : ${mise.fare.toll}원</li>`);
+            $("#names-q1").append(`<li>택시요금 : ${mise.fare.taxi}원</li>`);
+            $("#names-q1").append(`<li>전체거리 : ${mise.distance}m</li>`); 
+            $("#names-q1").append(`<li>소요시간 : $약 {duration}분</li>`); 
+        
+            }
+            )
+    </script>
+</body>
+</html>

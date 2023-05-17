@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.index),
     path('form/', views.form),
     path('result/', views.result),
+    path('search/', views.search),
 ]

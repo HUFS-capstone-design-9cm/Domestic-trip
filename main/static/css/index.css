@@ -22,16 +22,16 @@
 @keyframes move {
     0% {
             transition: transform;
-            transform: rotate(-20deg);
+            transform: rotate(-5deg);
         }
     50% {
         transition: transform;
-        transform: rotate(20deg);
+        transform: rotate(5deg);
     }
     
     100% {
             transition: transform;
-            transform: rotate(-20deg);
+            transform: rotate(-5deg);
         }
 }
 
@@ -49,7 +49,7 @@ body {
     width: 100%;
     height: 100%;
     color: green;
-    font-family: "Bazzi";
+    font-family: 'Bazzi';
     background-color: beige;
 }
 
@@ -70,16 +70,20 @@ body {
 }
 
 .main_title {
-    font-family: 'GoryeongStrawberry';
+    font-family: 'GmarketSansMedium';
     font-size: 50px;
     padding-bottom: 15px;
     text-align: center;
     margin-top: 100px;
+    color: green;
+    text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
 }
 
 .intro {
     text-align: center;
     padding-bottom: 40px;
+    color: green;
+    text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
 }
 
 .intro h1 {
@@ -94,7 +98,7 @@ body {
 
 .animation .image {
     border-radius: 30px;
-    height: 400px;
+    height: 350px;
     width: 550px;
     animation-name: move;
     animation-duration: 5s;
@@ -118,6 +122,11 @@ body {
     box-shadow: 7px 7px 5px grey;
 }
 
+input[name=nickname]::placeholder {
+  color: green;
+  text-align: center;
+}
+
 .button {
     text-align: center;
     padding-bottom: 50px;
@@ -138,7 +147,6 @@ body {
 }
 
 .button button:hover {
-    text-decoration: underline;
     background-color: greenyellow;
 }
 

@@ -52,7 +52,6 @@ button:hover {
     justify-content: center;
     width: 100%;
     height: 100%;
-    margin-top: 100px;
 }
 
 #main_contents .wrapper {
@@ -76,6 +75,7 @@ button:hover {
 .result h1 {
     font-size: 50px;
     font-family: 'GoryeongStrawberry';
+    margin-top: 100px;
 }
 
 .result h3 {
@@ -203,27 +203,30 @@ button:hover {
 }
 
 .copy_btn {
-    background-color: plum;
+    background-image: url('../image/clip.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
     height: 100px;
     width: 100px;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
-.face_share {
-    background-image: url(../img/facebook.png);
+.insta_share {
+    background-image: url('../image/insta.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100px;
     width: 100px;
-    background-color: #3b5998;
+    background-color: white;
     color: white;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .kak_share {
-    background-image: url(../img/kakao.png);
+    background-image: url('../image/kakao.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100px;
@@ -231,7 +234,7 @@ button:hover {
     background-color: #f1d900;
     color: black;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .buttons h3 {

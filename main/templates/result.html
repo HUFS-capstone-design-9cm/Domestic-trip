@@ -21,6 +21,7 @@
         <div class="wrapper">
             <div class="result">
                 <div class="titles">
+                    <h1>{{ traveler.modifier }}</h1>
                     <h1>{{ traveler.name }}</h1>
                 </div>
                 <div class="result_img">
@@ -36,12 +37,12 @@
             <div class="space">
                 <h3>내 여행지는 {{ traveler.region }}</h3>
                 <div class="voyage">
+                    <div class="region_img">
+                        <img src="{% static 'image/' %}{{ traveler.personality }}_region.png" alt="이미지 없음">
+                    </div>
                     <ul>
-                        <li>여기</li>
-                        <li>거기</li>
-                        <li>저기</li>
-                        <li>이쪽</li>
-                        <li>저쪽</li>
+                        <li>#땅끝마을</li>
+                        <li>#땅끝뷰</li>
                     </ul>
                 </div>
             </div>

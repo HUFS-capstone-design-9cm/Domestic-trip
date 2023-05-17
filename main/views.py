@@ -45,7 +45,6 @@ def result(request):
         if counter[c] >= 2:
             person += c
     best_traveler = Traveler.objects.get(personality=person)
-    best_traveler.count += 1
     best_traveler.save()
     
     context = {
@@ -58,12 +57,12 @@ def result(request):
 
 def search(request):
     places = {
-        'start': [35.2849, 129.0954],
-        '해운대': [35.1587, 129.1604],
-        '씨라이프': [35.1594 ,129.1610],
-        '더베이': [35.1566, 129.152],
-        '남포동': [35.0975, 129.0304],
-        '센텀시티': [35.1708, 129.1287]
+        'start': [34.5709, 126.6079],
+        '전망대': [34.2961, 126.5246],
+        '미황사': [34.3829, 126.5774],
+        '대흥사': [34.4764, 126.6168],
+        '해창주조장': [34.5177, 126.5386],
+        '해남공룡박물관': [34.5897, 126.4375]
     }
     
     regions = list(places.keys())
@@ -96,9 +95,31 @@ def search(request):
                        'lat': str(lat), 
                        'lng': str(lng)}
         
+        
     context = {
-        'routes' : routes,
+        'routes': routes,
         'route_js': json.dumps(routes)
     }
-    print(context)
+    """
+    routes = {
+               'start': {'sequence': 1, 
+                          'lat': 34.5709, 
+                          'lng': 126.6079}, 
+                '해남공룡박물관': {'sequence': 2, 
+                                 'lat': 34.5897, 
+                                 'lng': 126.4375},
+                '해창주조장': {'sequence': 3, 
+                             'lat': 34.5177,
+                             'lng': 126.5386 },
+                '대흥사': {'sequence': 4, 
+                          'lat': 34.4764, 
+                          'lng': 126.6168}, 
+                '미흥사': {'sequence': 5, 
+                          'lat': 34.3829, 
+                          'lng': 126.5774}, 
+                '전망대': {'sequence': 6, 
+                          'lat': 34.2961, 
+                          'lng': 126.5246}
+            }
+    """
     return render(request, 'search.html', context=context)

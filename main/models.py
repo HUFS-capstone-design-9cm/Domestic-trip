@@ -4,7 +4,7 @@ class Traveler(models.Model):
     name = models.CharField(max_length=50)
     region = models.CharField(max_length=50)
     content = models.CharField(max_length=1000)
-    count = models.IntegerField(default=0)
+    modifier = models.CharField(max_length=50)
     personality = models.CharField(max_length=3)
     
     def __str__(self):

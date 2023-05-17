@@ -4,6 +4,13 @@
 	<meta charset="utf-8"/>
 	<title>Kakao 지도 시작하기</title>
     <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+     <style>
+        .customoverlay {position:relative;bottom:85px;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;float:left;}
+        .customoverlay:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}
+        .customoverlay a {display:block;text-decoration:none;color:#000;text-align:center;border-radius:6px;font-size:14px;font-weight:bold;overflow:hidden;background: #d95050;background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;}
+        .customoverlay .title {display:block;text-align:center;background:#fff;margin-right:35px;padding:10px 15px;font-size:14px;font-weight:bold;}
+        .customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:22px;height:12px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+    </style>
 </head>
 <body>
 	<div id="map" style="width:500px;height:400px;"></div>
@@ -57,7 +64,8 @@
             var container = document.getElementById('map');
             var options = {
                 center: new kakao.maps.LatLng(origin.x, origin.y),
-                level: 10
+                level: 10,
+                marker: marker
             };
 
             var map = new kakao.maps.Map(container, options);
@@ -65,12 +73,27 @@
             // 마커 생성하기
             for (route of Object.keys(routes)) {
                 var markerPosition  = new kakao.maps.LatLng(routes[route].lat, routes[route].lng); 
-
+                var num = routes[route].sequence;
+                var sequence = num.toString();
                 // 마커를 생성합니다
                 var marker = new kakao.maps.Marker({
                     map: map,
-                    position: markerPosition
-                }); 
+                    position: markerPosition,
+                });
+                
+                var content = '<div class="customoverlay">' +
+                    '<span class="title">' + sequence + '</span>' + '</div>';
+
+                // 커스텀 오버레이가 표시될 위치입니다 
+                var position = new kakao.maps.LatLng(routes[route].lat, routes[route].lng);  
+
+                // 커스텀 오버레이를 생성합니다
+                var customOverlay = new kakao.maps.CustomOverlay({
+                    map: map,
+                    position: position,
+                    content: content,
+                    yAnchor: 1 
+                });
             }
             
             
@@ -110,7 +133,7 @@
             $("#names-q1").append(`<li>통행요금 : ${mise.fare.toll}원</li>`);
             $("#names-q1").append(`<li>택시요금 : ${mise.fare.taxi}원</li>`);
             $("#names-q1").append(`<li>전체거리 : ${mise.distance}m</li>`); 
-            $("#names-q1").append(`<li>소요시간 : $약 {duration}분</li>`); 
+            $("#names-q1").append(`<li>소요시간 : 약 ${duration}분</li>`); 
         
             }
             )

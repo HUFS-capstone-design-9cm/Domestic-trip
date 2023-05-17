@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewprot" content="width=device-width, initial-scale=1.0">
-    <title>테스트페이지</title>
+    <title>테스트 페이지</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
     <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
@@ -32,9 +32,10 @@
                                    name="question-{{ question.pk }}" 
                                    id="choice-{{ choice.pk }}" 
                                    value="{{ choice.category }}"
+                                   style="display: none;"
                                    />
-                            <label for="choice-{{ choice.pk }}">
-                                {{ forloop.counter }}. {{ choice.content }}
+                            <label for="choice-{{ choice.pk }}" class="radio-button">
+                                {{ choice.content }}
                             </label>
                         </div>
                         {% endfor %}

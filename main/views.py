@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from haversine import haversine
 from .models import Traveler, Question, Choice, Spot, Survey
+import sys, json
 
 def index(request):
     travelers = Traveler.objects.all()
@@ -50,5 +52,53 @@ def result(request):
         'traveler' : best_traveler,
         'counter' : counter
     }
-    
+    print(context)
     return render(request, 'result.html', context=context)
+
+
+def search(request):
+    places = {
+        'start': [35.2849, 129.0954],
+        '해운대': [35.1587, 129.1604],
+        '씨라이프': [35.1594 ,129.1610],
+        '더베이': [35.1566, 129.152],
+        '남포동': [35.0975, 129.0304],
+        '센텀시티': [35.1708, 129.1287]
+    }
+    
+    regions = list(places.keys())
+    NUM = len(regions)
+    regions.remove('start')
+    departure = 'start'
+    sequence = NUM - len(regions)
+    distance = sys.maxsize
+    lat, lng = places['start'][0], places['start'][1]
+    routes = {'start': {'sequence': sequence,
+                        'lat': str(lat), 
+                        'lng': str(lng)}
+    }
+
+    while len(regions) != 0:       
+        for region in regions:
+            temp = haversine(places[departure],
+                            places[region],
+                            unit='km')
+            if distance > temp:
+                distance = temp
+                ans = region
+                
+        departure = ans
+        regions.remove(ans)
+        sequence = NUM - len(regions)
+        distance = sys.maxsize
+        lat, lng = places[ans][0], places[ans][1]
+        routes[ans] = {'sequence': sequence,
+                       'lat': str(lat), 
+                       'lng': str(lng)}
+        
+    context = {
+        'routes' : routes,
+        'route_js': json.dumps(routes)
+    }
+    print(context)
+    return render(request, 'search.html', context=context)

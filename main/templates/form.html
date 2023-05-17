@@ -20,6 +20,9 @@
                     <div class="question_container">
                         <h3 class="num">{{ question.num }} / {{ questions.count }}</h3>
                         <h3 class="question">{{ question.content }}</h3>
+                        <div class="form_img">
+                            <img src="{% static 'image/Q' %}{{ question.num }}.png" alt="이미지 없음">
+                        </div>
                     </div>
                     <div class="answer">
                         {% for choice in question.choice_set.all %}

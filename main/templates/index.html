@@ -9,39 +9,33 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 </head>
-<body style="background-image: url('static/image/forest.png'); background-repeat : no-repeat; background-size : cover">
-    <section id="main_contents">
-        <div class="wrapper">
-            <div class="title">
-                <h3 class="main_title">어쩌다 국내여행</h3>
-            </div>
-            <div class="intro">
-                <h1>나의 여행 성향은?</h1>
-            </div>
-            <div class="animation">
-                <img class="image" src="{% static 'image/forest.png' %}">
-            </div>
-            <div class="nick">
-                <input class="name" type="text" size="17" placeholder=" 닉네임을 입력해주세요.">
-            </div>
-            <div class="button">
-                <a href="/form/">
-                    <button class="start" type="button">시작하기</button>
-                </a>
-            </div>
-            <div class="result_data">
+<body>
+    <div class="wrapper">
+        <div class="title">
+            <h3 class="main_title">어쩌다 국내여행</h3>
+        </div>
+        <div class="intro">
+            <h1>나의 여행 성향은?</h1>
+        </div>
+        <div class="nick">
+            <input class="name" type="text" size="17" placeholder=" 닉네임을 입력해주세요.">
+        </div>
+        <div class="button">
+            <a href="/form/">
+                <button class="start" type="button">시작하기</button>
+            </a>
+        </div>
+        <div class="animation">
+            <img class="image" src="{% static 'image/main_car.png' %}">
+        </div>
+        <div class="result_data">
                 <div class="data_wrap">
-                    <ul>
-                    {% for traveler in travelers %}
-                        <li>{{ traveler.name }} : {{ traveler.count }}명</li>
-                    {% endfor %}
-                    </ul>
+                    <h3>현재 N명이 여행을 떠났습니다.</h3>
                 </div>
             </div>
-            <div class="logo">
-                <img src="{% static 'image/logo.png' %}" alt="logo" height="60px" width="100px">
-            </div>
+        <div class="logo">
+            <img src="{% static 'image/logo.png' %}" alt="logo" height="60px" width="100px">
         </div>
-    </section>
+    </div>
 </body>
 </html>

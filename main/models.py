@@ -3,7 +3,7 @@ from django.db import models
 class Traveler(models.Model):
     name = models.CharField(max_length=50)
     region = models.CharField(max_length=50)
-    content = models.CharField(max_length=100)
+    content = models.CharField(max_length=1000)
     count = models.IntegerField(default=0)
     personality = models.CharField(max_length=3)
     

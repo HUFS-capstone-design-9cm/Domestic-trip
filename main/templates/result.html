@@ -20,9 +20,8 @@
     <section id="main_contents">
         <div class="wrapper">
             <div class="result">
-                <div class=""titles>
-                    <h3>본투비 트래블러</h3>
-                    <h1>모노클로니우스</h1>
+                <div class="titles">
+                    <h1>{{ traveler.name }}</h1>
                 </div>
                 <div class="result_img">
                     <img src="{% static 'image/' %}{{ traveler.personality }}.png" alt="이미지 없음">
@@ -30,12 +29,8 @@
             </div>
             <div class="result_explains">
                 <div class="explain">
-                    <h3 class="title">내 유형은 {{ traveler.content }} {{ traveler.name }}?!</h3>
-                    <ul>
-                        <li>이거는</li>
-                        <li>이렇고</li>
-                        <li>저렇습니다.</li>
-                    </ul>
+                    <h3 class="title">내 유형은 {{ traveler.name }}?!</h3>
+                    <h3>{{ traveler.content }}</h3>
                 </div>
             </div>
             <div class="space">
@@ -52,7 +47,7 @@
             </div>
             <div class="research">
                 <div class="research_btn">
-                    <a href="#">
+                    <a href="/search/">
                         <button class="research_form" type="button">만족도 조사하고 여행지 추천받기</button>
                     </a>
                 </div>
@@ -74,14 +69,15 @@
                 </ul>
             </div>
             <div class="share">
-                <div class="url">
-                    <button class="copy_btn" type="button">URL 복사하기</button>
+                <h3>공유하기</h3>
+                <div class="share_btn">
+                    <button class="copy_btn" type="button"></button><br>
                 </div>
-                <div class="facebook">
-                    <button class="face_share" type="button">페북 공유</button>
+                <div class="share_btn">
+                    <button class="face_share" type="button"></button>
                 </div>
-                <div class="kakao">
-                    <button class="kak_share" type="button">카톡 공유</button>
+                <div class="share_btn">
+                    <button class="kak_share" type="button"></button>
                 </div>
             </div>
             <div class="logo">

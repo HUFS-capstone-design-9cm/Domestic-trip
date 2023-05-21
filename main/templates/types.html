@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>여행 유형</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/types.css' %}">
+</head>
+<body>
+    <section id="main_contents">
+        <div class="wrapper">
+            <h1>어쩌다 국내여행</h1>
+            <p>공룡을 눌러 유형을 확인하세요!</p>
+            <div class="traveler">
+                {% for t in traveler %}
+                    <div class="data">
+                        <a href="/result/{{ t.pk }}/">
+                        <img src="{% static 'image/' %}{{ t.personality }}.png" 
+                             alt="이미지 없음"></a>
+                    </div>
+                    {% if forloop.counter|divisibleby:2 %}
+                        </div><div class="traveler">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <p class="joguman">© 2023 Joguman, Inc. All Rights Reserved</p>
+</body>
+</html>

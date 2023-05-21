@@ -6,6 +6,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('form/', views.form),
-    path('result/', views.result),
+    path('result/<int:traveler_id>/', views.result),
+    path('submit/', views.submit),
     path('search/', views.search),
+    path('types/', views.types),
 ]

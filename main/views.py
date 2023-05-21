@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from haversine import haversine
 from .models import Traveler, Question, Choice, Spot, Survey
 import sys, json
@@ -21,7 +21,7 @@ def form(request):
     
     return render(request, 'form.html', context=context)
 
-def result(request):
+def submit(request):
     # 문항 수
     N = Question.objects.count()
     # 여행자 유형 수
@@ -44,15 +44,26 @@ def result(request):
     for c in counter.keys():
         if counter[c] >= 2:
             person += c
+
     best_traveler = Traveler.objects.get(personality=person)
     best_traveler.count += 1
     best_traveler.save()
-    
+
     context = {
         'traveler' : best_traveler,
         'counter' : counter
     }
     print(context)
+    # print(best_traveler.pk)
+    return redirect(f'/result/{best_traveler.pk}')
+
+
+def result(request, traveler_id):
+    traveler = Traveler.objects.get(pk=traveler_id)
+    context = {
+        'traveler' : traveler,
+    }
+    
     return render(request, 'result.html', context=context)
 
 
@@ -102,3 +113,11 @@ def search(request):
     }
     print(context)
     return render(request, 'search.html', context=context)
+
+
+def types(request):
+    traveler = Traveler.objects.all()
+    context = {
+        'traveler' : traveler,
+    }
+    return render(request, 'types.html', context=context)

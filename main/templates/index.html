@@ -18,10 +18,10 @@
             <h1>나의 여행 성향은?</h1>
         </div>
         <div class="nick">
-            <input class="name" name="nickname" type="text" size="17" placeholder=" 닉네임을 입력해주세요.">
+            <input id="nickname-input" class="name" name="nickname" type="text" size="17" placeholder="닉네임을 입력해주세요.">
         </div>
         <div class="button">
-            <a href="/form/">
+            <a id="start-button" href="/form/">
                 <button class="start" type="button">시작하기</button>
             </a>
         </div>
@@ -30,12 +30,13 @@
         </div>
         <div class="result_data">
                 <div class="data_wrap">
-                    <h3>현재 3명이 여행을 떠났습니다.</h3>
+                    <h3>현재 {{ travelers.count }}명이 여행을 떠났습니다.</h3>
                 </div>
         </div>
         <div class="logo">
             <img src="{% static 'image/logo.png' %}" alt="logo" height="60px" width="100px">
         </div>
     </div>
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
 </body>
 </html>

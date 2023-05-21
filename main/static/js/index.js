@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var nicknameInput = document.getElementById("nickname-input");
-    var startButton = document.getElementById("start-button");
+    const nicknameInput = document.getElementById("nickname-input");
+    const startButton = document.getElementById("start-button");
 
     nicknameInput.addEventListener("keyup", function(event) {
         if (event.keyCode === 13) {

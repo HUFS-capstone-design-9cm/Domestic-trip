@@ -7,7 +7,7 @@
     <meta name="viewprot" content="width=device-width, initial-scale=1.0">
 
     <meta property="og:title" content="어쩌다 국내여행" />
-    <meta property="og:img" content="" />
+    <meta property="og:image" content="" />
     <meta property="og:url" content="" />
     <meta property="og:description" content="나의 여행 성향은?" />
 
@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/result.css' %}">
     <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 </head>
 <body>
     <section id="main_contents">
@@ -64,7 +65,7 @@
             </div>
             <div class="research">
                 <div class="research_btn">
-                    <a href="/search/">
+                    <a href="/survey/">
                         <button class="research_form" type="button">만족도 조사하고 여행지 추천받기</button>
                     </a>
                 </div>
@@ -91,7 +92,7 @@
                     <button class="copy_btn" type="button"></button><br>
                 </div>
                 <div class="share_btn">
-                    <button class="insta_share" type="button"></button>
+                    <button id="insta_share" type="button"></button>
                 </div>
                 <div class="share_btn">
                     <button class="kak_share" type="button"></button>

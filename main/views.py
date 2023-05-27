@@ -147,3 +147,7 @@ def types(request):
         'traveler' : traveler,
     }
     return render(request, 'types.html', context=context)
+
+
+def survey(request):
+    return render(request, 'survey.html')

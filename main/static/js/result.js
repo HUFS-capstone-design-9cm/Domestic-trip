@@ -6,6 +6,9 @@ $(function() {
     let img = $('.result_img img').attr('src');
     $("meta[property='og\\:url']").attr('content', url);
     $("meta[property='og\\:image']").attr('content', img);
+    const nickname = sessionStorage.getItem("nickname");
+    const txt = document.getElementById("nickname");
+    txt.innerHTML = nickname;
 });
 
 // function copyUrl() {

@@ -1,3 +1,5 @@
+sessionStorage.clear();
+
 document.addEventListener("DOMContentLoaded", function() {
     const nicknameInput = document.getElementById("nickname-input");
     const startButton = document.getElementById("start-button");
@@ -15,4 +17,14 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("닉네임을 입력해주세요.");
         }
     });
+});
+
+
+$(function() {
+    $('.start').click(function (e) {
+        var nickname = document.getElementById("nickname-input").value;
+        console.log(nickname);
+        sessionStorage.setItem('nickname', nickname);
+    })
+        
 });

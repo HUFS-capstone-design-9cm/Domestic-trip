@@ -22,28 +22,45 @@
         <div class="wrapper">
             <div class="result">
                 <div class="titles">
+                    <h1>{{ traveler.data.modifier }}</h1>
                     <h1>{{ traveler.name }}</h1>
                 </div>
                 <div class="result_img">
-                    <img src="{% static 'image/' %}{{ traveler.personality }}.png" alt="이미지 없음">
+                    <img src="{% static 'image/' %}{{ traveler.data.personality }}.png" alt="이미지 없음">
                 </div>
             </div>
             <div class="result_explains">
                 <div class="explain">
-                    <h3 class="title">내 유형은 {{ traveler.name }}?!</h3>
-                    <h3>{{ traveler.content }}</h3>
+                    <h3 class="title"><span id="nickname"></span>님의 유형은 {{ traveler.name }}?!</h3>
+                    <ul>
+                        {% for content in traveler.data.contents %}
+                        <li>
+                            {{ content }}
+                        </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
             <div class="space">
                 <h3>내 여행지는 {{ traveler.region }}</h3>
                 <div class="voyage">
-                    <ul>
-                        <li>✅ 땅끝마을 전망대</li>
-                        <li>✅ 미황사</li>
-                        <li>✅ 대흥사</li>
-                        <li>✅ 해창주조장</li>
-                        <li>✅ 해남 공룡박물관</li>
+                    <div class="region_img">
+                        <img width='300px' src="{% static 'image/' %}{{ traveler.data.personality }}_region.png" alt="이미지 없음">
+                    </div>
+                    <div class="spots">
+                        <h3 class="title">관광지 추천</h3>
+                        <p>{{ traveler.data.hashtag }}</p>
+                        <ul>
+                        {% for spot in traveler.data.spots.list %}
+                            <li>
+                                <a>
+                                    <img src="{% static 'image/' %}{{ spot.img }}" alt="이미지 없음">
+                                    <h3>{{ spot.name }}</h3>
+                                </a>
+                            </li>
+                        {% endfor %}
                     </ul>
+                    </div>
                 </div>
             </div>
             <div class="research">

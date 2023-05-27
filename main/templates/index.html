@@ -8,6 +8,7 @@
     <title>표지</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -30,7 +31,7 @@
         </div>
         <div class="result_data">
                 <div class="data_wrap">
-                    <h3>현재 {{ travelers.count }}명이 여행을 떠났습니다.</h3>
+                    <h3>현재 {{ count }}명이 여행을 떠났습니다.</h3>
                 </div>
         </div>
         <div class="logo">

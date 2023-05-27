@@ -5,6 +5,7 @@
 	<meta charset="utf-8"/>
 	<title>Kakao 지도 시작하기</title>
     <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+
     <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/search.css' %}">
 </head>
@@ -40,7 +41,7 @@
                         ways.push({"x": routes[route].lat, "y": routes[route].lng})
                     }
                 }
-        }   
+            }   
         }
         for (way of ways){
             if (waypoints != ""){
@@ -62,7 +63,8 @@
             var container = document.getElementById('map');
             var options = {
                 center: new kakao.maps.LatLng(origin.x, origin.y),
-                level: 10
+                level: 10,
+                marker: marker
             };
 
             var map = new kakao.maps.Map(container, options);
@@ -70,12 +72,27 @@
             // 마커 생성하기
             for (route of Object.keys(routes)) {
                 var markerPosition  = new kakao.maps.LatLng(routes[route].lat, routes[route].lng); 
-
+                var num = routes[route].sequence;
+                var sequence = num.toString();
                 // 마커를 생성합니다
                 var marker = new kakao.maps.Marker({
                     map: map,
-                    position: markerPosition
-                }); 
+                    position: markerPosition,
+                });
+                
+                var content = '<div class="customoverlay">' +
+                    '<span class="title">' + sequence + '</span>' + '</div>';
+
+                // 커스텀 오버레이가 표시될 위치입니다 
+                var position = new kakao.maps.LatLng(routes[route].lat, routes[route].lng);  
+
+                // 커스텀 오버레이를 생성합니다
+                var customOverlay = new kakao.maps.CustomOverlay({
+                    map: map,
+                    position: position,
+                    content: content,
+                    yAnchor: 1 
+                });
             }
             
             

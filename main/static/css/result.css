@@ -87,6 +87,7 @@ button:hover {
     height: 100%;
     padding-bottom: 50px;
     line-height: 1.5;
+    text-align: center;
 }
 
 .result_explains .explain {
@@ -111,6 +112,89 @@ button:hover {
 
 .result_explains li {
     padding-bottom: 15px;
+}
+
+.spots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 3px solid #EA7E7C;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+}
+
+.lectures .title {
+    text-align: center;
+    width: 400px;
+    font-size: 30px;
+    font-family: "GmarketSansBold";
+    color: #EA7E7C;
+    position: relative;
+}
+
+.spots .title:before, .spots .title:after{
+    content: '';
+    display: block;
+    width: 120px;
+    height: 3px;
+    background-color: #EA7E7C;
+    position: absolute;
+}
+
+.spots .title:before{
+    left: 0;
+    top: 50%;
+}
+
+.spots .title:after{
+    right: 0;
+    top: 50%;
+}
+
+.spots p {
+    padding: 50px 0;
+    line-height: 1.5;
+}
+
+.spots ul {
+    width: 400px;
+}
+
+.spots li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.spots a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+}
+
+.spots a:hover img {
+    transform: scale(1.05);
+}
+
+.spots a:hover button {
+    text-decoration: underline;
+}
+
+.spots li img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    transition: transform .5s;
+}
+
+.spots li h3 {
+    font-family: "GmarketSansBold";
+    font-size: 17px;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0 10px 20px;
 }
 
 .space {

@@ -198,7 +198,7 @@ button:hover {
     /* border: 1px solid black; */
 }
 
-.insta_share {
+#insta_share {
     background-image: url('../image/insta.png');
     background-repeat: no-repeat;
     background-size: cover;

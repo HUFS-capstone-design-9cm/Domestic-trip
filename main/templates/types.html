@@ -16,7 +16,7 @@
                 {% for t in traveler %}
                     <div class="data">
                         <a href="/result/{{ t.pk }}/">
-                        <img src="{% static 'image/' %}{{ t.personality }}.png" 
+                        <img src="{% static 'image/' %}{{ t.data.personality }}.png" 
                              alt="이미지 없음"></a>
                     </div>
                     {% if forloop.counter|divisibleby:2 %}

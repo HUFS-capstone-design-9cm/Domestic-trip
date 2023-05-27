@@ -3,9 +3,8 @@ from django.db import models
 class Traveler(models.Model):
     name = models.CharField(max_length=50)
     region = models.CharField(max_length=50)
-    content = models.CharField(max_length=1000)
-    modifier = models.CharField(max_length=50)
-    personality = models.CharField(max_length=3)
+    count = models.IntegerField(default=0)
+    data = models.JSONField()
     
     def __str__(self):
         return self.name
@@ -25,15 +24,6 @@ class Choice(models.Model):
     def __str__(self):
         return self.content
     
-class Spot(models.Model):
-    name = models.CharField(max_length=50)
-    spot_id = models.CharField(max_length=100)
-    content = models.CharField(max_length=100)
-    traveler_id = models.ForeignKey(to='main.Traveler', on_delete=models.CASCADE, null=True)
-    
-    def __str__(self):
-        return f'{self.name} - {self.content}'
-    
 class Survey(models.Model):
     accuracy = models.IntegerField(default=0)
     satisfaction = models.IntegerField(default=0)
@@ -41,4 +31,4 @@ class Survey(models.Model):
     
     def __str__(self):
         return f'{self.accuracy}\n{self.satisfaction}\n{self.influence}'
-    
+

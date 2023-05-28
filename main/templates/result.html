@@ -22,7 +22,7 @@
         <div class="wrapper">
             <div class="result">
                 <div class="titles">
-                    <h1>{{ traveler.data.modifier }}</h1>
+                    <h2>{{ traveler.data.modifier }}</h2>
                     <h1>{{ traveler.name }}</h1>
                 </div>
                 <div class="result_img">
@@ -30,56 +30,63 @@
                 </div>
             </div>
             <div class="result_explains">
-                <div class="explain">
-                    <h3 class="title"><span id="nickname"></span>님의 유형은 {{ traveler.name }}?!</h3>
-                    <ul>
-                        {% for content in traveler.data.contents %}
-                        <li>
-                            {{ content }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
+                <h3 class="title"><span id="nickname"></span>님의 유형은 {{ traveler.name }}?!</h3>
+                <ul>
+                    {% for content in traveler.data.contents %}
+                    <li>
+                        {{ content }}
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
             <div class="space">
-                <h3>내 여행지는 {{ traveler.region }}</h3>
-                <div class="voyage">
-                    <div class="region_img">
-                        <img width='300px' src="{% static 'image/' %}{{ traveler.data.personality }}_region.png" alt="이미지 없음">
-                    </div>
-                    <div class="spots">
-                        <h3 class="title">관광지 추천</h3>
-                        <p>{{ traveler.data.hashtag }}</p>
-                        <ul>
-                        {% for spot in traveler.data.spots.list %}
-                            <li>
-                                <a>
-                                    <img src="{% static 'image/' %}{{ spot.img }}" alt="이미지 없음">
-                                    <h3>{{ spot.name }}</h3>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                    </div>
+                <div class="space_title">
+                    <h3>내 여행지는 {{ traveler.region }}</h3>
+                    <img src="{% static 'image/' %}{{ traveler.data.personality }}_region.png" alt="이미지 없음">
+                    <p>{{ traveler.data.hashtag }}</p>
                 </div>
-            </div>
-            <div class="research">
-                <div class="research_btn">
-                    <a href="/survey/">
-                        <button class="research_form" type="button">만족도 조사하고 여행지 추천받기</button>
-                    </a>
+                <div class="spots">
+                    <h3 class="title">{{ traveler.region }} 관광지 추천</h3>
+                    <p>가고 싶은 관광지를 선택해보세요!</p>
+                    <p>경로 추천을 해드립니다🙂</p>
+                    <p>(3곳 이상 선택해야 추천해드릴 수 있어요!)</p>
+                    <form method="POST" action="/search/" onsubmit="return validateSelection()">
+                        {% csrf_token %}
+                        <div class="slideshow-container">
+                            <ul id="spot-list">
+                                {% for spot in traveler.data.spots.list %}
+                                    <li class="spot-slide">
+                                        <div class="spot-item">
+                                            <a>
+                                                <img src="{% static 'image/' %}{{ spot.img }}" alt="이미지 없음" class="spot-image" onclick="toggleCheckbox('spot-checkbox-{{ forloop.counter }}')">
+                                                <div class="controls">
+                                                    <p class="prev-btn" onclick="showSlide('prev')">&lt;</p>
+                                                    <h3>
+                                                        <label for="spot-checkbox-{{ forloop.counter }}">
+                                                            <input type="checkbox" id="spot-checkbox-{{ forloop.counter }}" name="selected_spot" value="{{ spot.name }}, {{ spot.coordinate }}">
+                                                            {{ spot.name }}
+                                                        </label>
+                                                    </h3>
+                                                    <p class="next-btn" onclick="showSlide('next')">&gt;</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <input class="search_btn" type="submit" value="경로 추천 받기">
+                    </form>
                 </div>
             </div>
             <div class="buttons">
                 <ul>
                     <li>
-                        <h3>다시할래</h3>
                         <a href="/">
                             <button type="button">테스트 다시하기</button>
                         </a>
                     </li>
                     <li>
-                        <h3>다른 유형도 볼래</h3>
                         <a href="/types">
                             <button type="button">다른 결과 보기</button>
                         </a>

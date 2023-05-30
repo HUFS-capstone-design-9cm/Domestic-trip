@@ -63,7 +63,7 @@
                                                     <p class="prev-btn" onclick="showSlide('prev')">&lt;</p>
                                                     <h3>
                                                         <label for="spot-checkbox-{{ forloop.counter }}">
-                                                            <input type="checkbox" id="spot-checkbox-{{ forloop.counter }}" name="selected_spot" value="{{ spot.name }}, {{ spot.coordinate }}">
+                                                            <input type="checkbox" id="spot-checkbox-{{ forloop.counter }}" name="selected_spot" value="{{ traveler.data.start }}, {{ spot.name }}, {{ spot.coordinate }}">
                                                             {{ spot.name }}
                                                         </label>
                                                     </h3>

@@ -65,20 +65,36 @@ def result(request, traveler_id):
     traveler = Traveler.objects.get(pk=traveler_id)
     context = {
         'traveler' : traveler,
+        'traveler_id' : traveler_id,
     }
     
     return render(request, 'result.html', context=context)
 
 
 def search(request):
+    if request.method == 'POST':
+        selected_spots = request.POST.getlist('selected_spot')
+
+    selected_spot = [
+        spot.replace('[', '').replace(']', '').split(', ')
+        for spot in selected_spots
+    ]
+    # print(selected_spot)
+    
     places = {
-        'start': [34.5709, 126.6079],
-        '전망대': [34.2961, 126.5246],
-        '미황사': [34.3829, 126.5774],
-        '대흥사': [34.4764, 126.6168],
-        '해창주조장': [34.5177, 126.5386],
-        '해남공룡박물관': [34.5897, 126.4375]
+        spot[0]:list(map(float, [spot[1], spot[2]])) 
+        for spot in selected_spot
     }
+    
+    places['start'] = [34.5709, 126.6079] # 시작 지점 수정 필요
+    # places = {
+    #     'start': [34.5709, 126.6079],
+    #     '전망대': [34.2961, 126.5246],
+    #     '미황사': [34.3829, 126.5774],
+    #     '대흥사': [34.4764, 126.6168],
+    #     '해창주조장': [34.5177, 126.5386],
+    #     '해남공룡박물관': [34.5897, 126.4375]
+    # }
     
     regions = list(places.keys())
     NUM = len(regions)
@@ -113,7 +129,8 @@ def search(request):
         
     context = {
         'routes': routes,
-        'route_js': json.dumps(routes)
+        'route_js': json.dumps(routes),
+        'selected_spots': selected_spots,
     }
     """
     routes = {

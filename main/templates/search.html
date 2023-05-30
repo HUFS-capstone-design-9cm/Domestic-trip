@@ -3,13 +3,13 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<title>Kakao 지도 시작하기</title>
+	<title>경로 추천</title>
     <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/search.css' %}">
 </head>
-<body>
+<body>    
     <div class="container">
         <div id="map" style="width:500px;height:400px;"></div>
         <h1>웹 페이지에 나타내보기</h1>
@@ -21,7 +21,12 @@
             <ul id="names-q1">
             </ul>
         </div>
+        
+        <a href="/survey">
+            <button class="survey_btn" type="button">만족도 조사하기</button>
+        </a>
     </div>
+    
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c963b5273576eb43b2c68c2088700c47"></script>
     <script>
         let routes = JSON.parse("{{ route_js | escapejs }}");

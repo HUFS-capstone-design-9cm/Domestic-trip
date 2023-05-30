@@ -254,31 +254,32 @@
                 "list": [
                     {
                         "name": "대흥사",
-                        "coordinate": [34.4764, 126.6168],
+                        "coordinate": [34.4771463089206, 126.616627540836],
                         "img": "spot/hn_spot1.png"
                     },
                     {
                         "name": "땅끝마을 전망대",
-                        "coordinate": [34.2961, 126.5246],
+                        "coordinate": [34.2947134846979, 126.525023335833],
                         "img": "spot/hn_spot2.png"
                     },
                     {
                         "name": "미황사",
-                        "coordinate": [34.3829, 126.5774],
+                        "coordinate": [34.3822314576451, 126.577957148483],
                         "img": "spot/hn_spot3.png"
                     },
                     {
                         "name": "해남공룡박물관",
-                        "coordinate": [34.5897, 126.4375],
+                        "coordinate": [34.5890886656765, 126.44283212925],
                         "img": "spot/hn_spot4.png"
                     },
                     {
                         "name": "해창주조장",
-                        "coordinate": [34.5177, 126.5386],
+                        "coordinate": [34.5176165314989, 126.538111193808],
                         "img": "spot/hn_spot5.png"
                     }
                 ]
-            }
+            },
+            "start": [34.570808739535, 126.60815046121]
             
         }
     }
@@ -303,31 +304,32 @@
                 "list": [
                     {
                         "name": "고수동굴",
-                        "coordinate": [0, 0],
+                        "coordinate": [36.9884241185062, 128.381603839972],
                         "img": "spot/dy_spot1.png"
                     },
                     {
                         "name": "보발재",
-                        "coordinate": [0, 0],
+                        "coordinate": [37.0339230512559, 128.47181441348],
                         "img": "spot/dy_spot2.png"
                     },
                     {
                         "name": "소백산",
-                        "coordinate": [0, 0],
+                        "coordinate": [36.9002852887103, 128.434835108468],
                         "img": "spot/dy_spot3.png"
                     },
                     {
                         "name": "수양개빛터널",
-                        "coordinate": [0, 0],
+                        "coordinate": [36.9604646639316, 128.332464808112],
                         "img": "spot/dy_spot4.png"
                     },
                     {
                         "name": "양백폭포",
-                        "coordinate": [0, 0],
+                        "coordinate": [36.9784827258925, 128.373684166825],
                         "img": "spot/dy_spot5.png"
                     }
                 ]
-            }
+            },
+            "start": [36.9854106363708, 128.370751882825]
             
         }
     }
@@ -352,31 +354,32 @@
                 "list": [
                     {
                         "name": "국사봉전망대",
-                        "coordinate": [0, 0],
+                        "coordinate": [35.6413837525156, 127.145862830079],
                         "img": "spot/is_spot1.png"
                     },
                     {
                         "name": "사선대",
-                        "coordinate": [0, 0],
+                        "coordinate": [35.6723753564873, 127.27462649251],
                         "img": "spot/is_spot2.png"
                     },
                     {
                         "name": "옥정호 출렁다리",
-                        "coordinate": [0, 0],
+                        "coordinate": [35.6323516214393, 127.151390112257],
                         "img": "spot/is_spot3.png"
                     },
                     {
                         "name": "요산공원",
-                        "coordinate": [0, 0],
+                        "coordinate": [35.6303773217913, 127.154886287343],
                         "img": "spot/is_spot4.png"
                     },
                     {
                         "name": "치즈테마파크",
-                        "coordinate": [0, 0],
+                        "coordinate": [35.6331020316786, 127.301257759531],
                         "img": "spot/is_spot5.png"
                     }
                 ]
-            }
+            },
+            "start": [35.6150025774123, 127.282777017446]
             
         }
     }
@@ -401,31 +404,32 @@
                     "list": [
                         {
                             "name": "강천산 군립공원",
-                            "coordinate": [0, 0],
+                            "coordinate": [35.4122313132324, 127.075096345191],
                             "img": "spot/sc_spot1.png"
                         },
                         {
                             "name": "내장산 국립공원",
-                            "coordinate": [0, 0],
+                            "coordinate": [35.4940638127116, 126.925603019136],
                             "img": "spot/sc_spot2.png"
                         },
                         {
                             "name": "섬진강",
-                            "coordinate": [0, 0],
+                            "coordinate": [35.4615335108127, 127.202421568483],
                             "img": "spot/sc_spot3.png"
                         },
                         {
                             "name": "순창전통고추장민속마을",
-                            "coordinate": [0, 0],
+                            "coordinate": [35.3689606606702, 127.109871058372],
                             "img": "spot/sc_spot4.png"
                         },
                         {
                             "name": "체계산 출렁다리",
-                            "coordinate": [0, 0],
+                            "coordinate": [35.4111524820518, 127.235325889393],
                             "img": "spot/sc_spot5.png"
                         }
                     ]
-                }
+                },
+            "start": [35.376770383937, 127.141197788854]
             
         }
     }
@@ -451,31 +455,32 @@
                     "list": [
                         {
                             "name": "고소동 벽화마을",
-                            "coordinate": [0, 0],
+                            "coordinate": [34.7390002356148, 127.741162805727],
                             "img": "spot/ys_spot1.png"
                         },
                         {
                             "name": "돌산공원",
-                            "coordinate": [0, 0],
+                            "coordinate": [34.7310624109541, 127.739627122758],
                             "img": "spot/ys_spot2.png"
                         },
                         {
                             "name": "오동도",
-                            "coordinate": [0, 0],
+                            "coordinate": [34.7408698432527, 127.755869745736],
                             "img": "spot/ys_spot3.png"
                         },
                         {
                             "name": "장도",
-                            "coordinate": [0, 0],
+                            "coordinate": [34.7471819155203, 127.670624618365],
                             "img": "spot/ys_spot4.png"
                         },
                         {
                             "name": "해상케이블카",
-                            "coordinate": [0, 0],
+                            "coordinate": [34.7305879168784, 127.741524650808],
                             "img": "spot/ys_spot5.png"
                         }
                     ]
-                }    
+                },
+            "start": [34.7582999491087, 127.716470886857]
         }
     }
 },
@@ -499,31 +504,32 @@
                     "list": [
                         {
                             "name": "경포해변",
-                            "coordinate": [0, 0],
+                            "coordinate": [37.8070600519301, 128.904473431571],
                             "img": "spot/gn_spot1.png"
                         },
                         {
                             "name": "드라마[도깨비]촬영지",
-                            "coordinate": [0, 0],
+                            "coordinate": [37.8785646702793, 128.834185755267],
                             "img": "spot/gn_spot2.png"
                         },
                         {
                             "name": "안목해변",
-                            "coordinate": [0, 0],
+                            "coordinate": [37.77110250141, 128.950821305427],
                             "img": "spot/gn_spot3.png"
                         },
                         {
                             "name": "오죽헌",
-                            "coordinate": [0, 0],
+                            "coordinate": [37.7783080433992, 128.876714559311],
                             "img": "spot/gn_spot4.png"
                         },
                         {
                             "name": "강릉 커피거리",
-                            "coordinate": [0, 0],
+                            "coordinate": [37.772632923584, 128.947239024375],
                             "img": "spot/gn_spot5.png"
                         }
                     ]
-                }      
+                },
+            "start": [37.7546421639667, 128.879794340513]
         }
     }
 },
@@ -548,31 +554,32 @@
                     "list": [
                         {
                             "name": "송도 센트럴파크",
-                            "coordinate": [0, 0],
+                            "coordinate": [37.3922046654449, 126.640701505829],
                             "img": "spot/ic_spot1.png"
                         },
                         {
                             "name": "신포 국제시장",
-                            "coordinate": [0, 0],
+                            "coordinate": [37.4717527117116, 126.627908807406],
                             "img": "spot/ic_spot2.png"
                         },
                         {
                             "name": "월미도",
-                            "coordinate": [0, 0],
+                            "coordinate": [37.4749947498043, 126.601692991708],
                             "img": "spot/ic_spot3.png"
                         },
                         {
                             "name": "인천 자유공원",
-                            "coordinate": [0, 0],
+                            "coordinate": [37.4754571207584, 126.622178603504],
                             "img": "spot/ic_spot4.png"
                         },
                         {
                             "name": "차이나타운",
-                            "coordinate": [0, 0],
+                            "coordinate": [37.4760554370526, 126.618353047476],
                             "img": "spot/ic_spot5.png"
                         }
                     ]
-                }
+                },
+            "start": [37.4425062298688, 126.701518656221]
         }
     }
 },
@@ -596,32 +603,43 @@
                     "list": [
                         {
                             "name": "남포동거리",
-                            "coordinate": [0, 0],
+                            "coordinate": [35.0995253244018, 129.02831625311],
                             "img": "spot/bs_spot1.png"
                         },
                         {
                             "name": "더베이 101",
-                            "coordinate": [0, 0],
+                            "coordinate": [35.1565836935941, 129.152069321105],
                             "img": "spot/bs_spot2.png"
                         },
                         {
                             "name": "센텀시티",
-                            "coordinate": [0, 0],
+                            "coordinate": [35.1710365257136, 129.127084511585],
                             "img": "spot/bs_spot3.png"
                         },
                         {
                             "name": "씨라이프 부산 아쿠아리움",
-                            "coordinate": [0, 0],
+                            "coordinate": [35.1591996329783, 129.161015391536],
                             "img": "spot/bs_spot4.png"
                         },
                         {
                             "name": "해운대 해수욕장",
-                            "coordinate": [0, 0],
+                            "coordinate": [35.1590407949356, 129.158795530119],
                             "img": "spot/bs_spot5.png"
                         }
                     ]
-                }
+                },
+            "start": [35.2846866758906, 129.095480074212]
         }
     }
+},
+{
+    "model": "main.survey",
+    "pk": 1,
+    "fields": {
+        "accuracy": 0,
+        "satisfaction": 0,
+        "influence": 0,
+        "count": 0
+    } 
 }
 ]

@@ -63,17 +63,18 @@
         </style>
     </head>
     <body>
-        <form class="survey" name="f1" method="post" action="search.html" onsubmit="return vCheck();">
+        <form class="survey" name="f1" method="post" action="/" onsubmit="return vCheck();">
+            {% csrf_token %}
             <div id="Q1">
                 <span>
                     본 테스트를 통해 나온 결과가 본인의 실제 성향과 얼마나 일치한다고 생각하십니까?<br>
                 </span>
                 <div class="star1">
-                    <input type="radio" name="reviewStar1" value="5" id="s1"><label for="s1">★</label>
-                    <input type="radio" name="reviewStar1" value="4" id="s2"><label for="s2">★</label>
-                    <input type="radio" name="reviewStar1" value="3" id="s3"><label for="s3">★</label>
-                    <input type="radio" name="reviewStar1" value="2" id="s4"><label for="s4">★</label>
-                    <input type="radio" name="reviewStar1" value="1" id="s5"><label for="s5">★</label>
+                    <input type="radio" name="accuracy" value="5" id="s1"><label for="s1">★</label>
+                    <input type="radio" name="accuracy" value="4" id="s2"><label for="s2">★</label>
+                    <input type="radio" name="accuracy" value="3" id="s3"><label for="s3">★</label>
+                    <input type="radio" name="accuracy" value="2" id="s4"><label for="s4">★</label>
+                    <input type="radio" name="accuracy" value="1" id="s5"><label for="s5">★</label>
                 </div>
             </div>
             <div id="Q2">
@@ -81,22 +82,22 @@
                     본 테스트를 통해 추천된 여행지와 관광지들, 코스에 얼마나 만족하십니까?<br>
                 </span>
                 <div class="star2">
-                    <input type="radio" name="reviewStar2" value="5" id="s6"><label for="s6">★</label>
-                    <input type="radio" name="reviewStar2" value="4" id="s7"><label for="s7">★</label>
-                    <input type="radio" name="reviewStar2" value="3" id="s8"><label for="s8">★</label>
-                    <input type="radio" name="reviewStar2" value="2" id="s9"><label for="s9">★</label>
-                    <input type="radio" name="reviewStar2" value="1" id="s10"><label for="s10">★</label>
+                    <input type="radio" name="satisfaction" value="5" id="s6"><label for="s6">★</label>
+                    <input type="radio" name="satisfaction" value="4" id="s7"><label for="s7">★</label>
+                    <input type="radio" name="satisfaction" value="3" id="s8"><label for="s8">★</label>
+                    <input type="radio" name="satisfaction" value="2" id="s9"><label for="s9">★</label>
+                    <input type="radio" name="satisfaction" value="1" id="s10"><label for="s10">★</label>
                 </div>
             </div>
             <div id="Q3">
                 본 테스트를 하면서 여행을 떠나고 싶다는 마음이 드셨나요?<br>
                 (1: 전혀 들지않았다 2: 조금 들었다 3: 들었다 4: 매우 들었다 5: 꼭 떠나고싶다)<br>
                 <div class="star3">
-                    <input type="radio" name="reviewStar3" value="5" id="s11"><label for="s11">★</label>
-                    <input type="radio" name="reviewStar3" value="4" id="s12"><label for="s12">★</label>
-                    <input type="radio" name="reviewStar3" value="3" id="s13"><label for="s13">★</label>
-                    <input type="radio" name="reviewStar3" value="2" id="s14"><label for="s14">★</label>
-                    <input type="radio" name="reviewStar3" value="1" id="s15"><label for="s15">★</label>
+                    <input type="radio" name="influence" value="5" id="s11"><label for="s11">★</label>
+                    <input type="radio" name="influence" value="4" id="s12"><label for="s12">★</label>
+                    <input type="radio" name="influence" value="3" id="s13"><label for="s13">★</label>
+                    <input type="radio" name="influence" value="2" id="s14"><label for="s14">★</label>
+                    <input type="radio" name="influence" value="1" id="s15"><label for="s15">★</label>
                 </div>
             </div>
             <br><br>
@@ -107,15 +108,15 @@
         <script type="text/javascript">
             function vCheck() {
                 let inputs = document.f1;
-                if (!inputs.reviewStar1.value) {
+                if (!inputs.accuracy.value) {
                     alert("첫번째 질문에 답하지 않았습니다.");
                     return false;
                 }
-                if (!inputs.reviewStar2.value) {
+                if (!inputs.satisfaction.value) {
                     alert("두번째 질문에 답하지 않았습니다.");
                     return false;
                 }
-                if (!inputs.reviewStar3.value) {
+                if (!inputs.influence.value) {
                     alert("세번째 질문에 답하지 않았습니다.");
                     return false;
                 }

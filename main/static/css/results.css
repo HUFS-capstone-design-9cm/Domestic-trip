@@ -117,9 +117,9 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: 3px solid green;
     /* padding-bottom: 20px; */
     /* margin-bottom: 20px; */
-    /* border-bottom: 3px solid green; */
 }
 
 .space p {
@@ -200,7 +200,7 @@ button {
     font-family: 'GmarketSansMedium';
     font-size: 20px;
     border-top: 3px solid green;
-    border-bottom: 3px solid green;
+    /* border-bottom: 3px solid green; */
     padding-top: 5px;
     margin-bottom: 10px;
 }
@@ -269,6 +269,10 @@ button {
 .buttons button:hover{
     color: black;
     background-color: #aacf88;
+}
+
+.buttons ul {
+    padding-top: 20px;
 }
 
 .hufs {

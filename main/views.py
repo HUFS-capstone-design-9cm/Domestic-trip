@@ -79,6 +79,15 @@ def result(request, traveler_id):
 
     return render(request, 'result.html', context=context)
 
+def results(request, traveler_id):
+    traveler = Traveler.objects.get(pk=traveler_id)
+    context = {
+        'traveler' : traveler,
+        'traveler_id' : traveler_id,
+    }
+
+    return render(request, 'results.html', context=context)
+
 
 def search(request):
     if request.method == 'POST':

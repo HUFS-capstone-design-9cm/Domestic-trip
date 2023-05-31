@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewprot" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="어쩌다 국내여행" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="나의 여행 성향은?" />
+
+    <title>결과페이지</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/results.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+</head>
+<body>
+    <section id="main_contents">
+        <div class="wrapper">
+            <div class="result">
+                <div class="titles">
+                    <h2>{{ traveler.data.modifier }}</h2>
+                    <h1>{{ traveler.name }}</h1>
+                </div>
+                <div class="result_img">
+                    <img src="{% static 'image/' %}{{ traveler.data.personality }}.png" alt="이미지 없음">
+                </div>
+            </div>
+            <div class="result_explains">
+                <ul>
+                    {% for content in traveler.data.contents %}
+                    <li>
+                        {{ content }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="space">
+                <div class="space_title">
+                    <div class="spots">
+                        <h3 class="title">추천하는 여행지는 {{ traveler.region }}</h3>
+                        <img src="{% static 'image/' %}{{ traveler.data.personality }}_region.png" alt="이미지 없음">
+                        <p>{{ traveler.data.hashtag }}</p>
+                    </div>
+                </div>
+                <div class="spots">
+                    <h3 class="title">{{ traveler.region }} 관광지 추천</h3>
+                    {% csrf_token %}
+                    <div class="slideshow-container">
+                        <ul id="spot-list">
+                            {% for spot in traveler.data.spots.list %}
+                                <li class="spot-slide">
+                                    <div class="spot-item">
+                                        <img src="{% static 'image/' %}{{ spot.img }}" alt="이미지 없음" class="spot-image">
+                                        <div class="controls">
+                                            <p class="prev-btn" onclick="showSlide('prev')">&lt;</p>
+                                            <h3>{{ spot.name }}</h3>
+                                            <p class="next-btn" onclick="showSlide('next')">&gt;</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <ul>
+                    <li>
+                        <a href="/">
+                            <button type="button">테스트 다시하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/types">
+                            <button type="button">다른 결과 보기</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo">
+                <img src="{% static 'image/logo.png' %}" alt="logo" height="60px" width="100px">
+            </div>
+            <p class="joguman">© 2023 Joguman, Inc. All Rights Reserved</p>
+        </div>
+    </section>
+    <script type="text/javascript" src="{% static 'js/results.js' %}"></script>
+</body>
+</html>

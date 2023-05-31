@@ -100,6 +100,7 @@ button {
     padding-top: 30px;
     padding-bottom: 10px;
     /* margin-bottom: 20px; */
+    
     width: 400px;
 }
 
@@ -116,9 +117,9 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 3px solid green;
+    /* padding-bottom: 20px; */
+    /* margin-bottom: 20px; */
+    /* border-bottom: 3px solid green; */
 }
 
 .space p {
@@ -200,18 +201,13 @@ button {
     font-size: 20px;
     border-top: 3px solid green;
     border-bottom: 3px solid green;
-    padding: 5px;
+    padding-top: 5px;
     margin-bottom: 10px;
-    width: 400px;
-}
-
-.space .space_title h3 {
-    width: 100%;
-    text-align: center;
 }
 
 .space_title p {
-    padding: 10px;
+    padding-top:10px;
+    padding-bottom: 20px;
     line-height: 1.5;
     font-size: 17px;
     text-align: center;
@@ -226,10 +222,12 @@ button {
     padding: 15px;
 }
 
-.space img{
+.space_title img{
     width: 100%;
     height: auto;
     transition: transform .5s;
+    padding-top: 10px;
+    padding-bottom: 3px;
 }
 
 .research {
@@ -247,74 +245,8 @@ button {
     margin-bottom: 30px;
 }
 
-.share {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    width: 400px;
-    text-align: center;
-    border-bottom: 3px solid green;
-    /* border-top: 3px solid green; */
-    padding-top: 20px;
-    /* margin-top: 20px; */
-}
-
-.share h3 {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-}
-
-.share button {
-    margin-bottom: 20px;
-    margin-left: 5px;
-    margin-right: 5px; 
-}
-
-.share .share_btn {
-    display: inline-block;
-}
-
-.copy_btn {
-    background-image: url('../image/clip.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: white;
-    height: 100px;
-    width: 100px;
-
-    /* border: 1px solid black; */
-}
-
-#insta_share {
-    background-image: url('../image/insta.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100px;
-    width: 100px;
-    background-color: white;
-    color: white;
-
-    /* border: 1px solid black; */
-}
-
-.kak_share {
-    background-image: url('../image/kakao.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100px;
-    width: 100px;
-    background-color: #f1d900;
-    color: black;
-
-    /* border: 1px solid black; */
-}
-
-.
  h3 {
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     text-align: center;
     font-size: 20px;
     font-weight: bold;

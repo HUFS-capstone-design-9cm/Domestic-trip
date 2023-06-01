@@ -32,6 +32,7 @@ body {
     background-size: 70vw 100vh;
     background-position: center;
     overflow: hidden;
+    touch-action: none; /* 아이폰 터비 비활성화 */
     width: 100%;
     height: 100%;
     color: black;

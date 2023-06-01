@@ -53,12 +53,15 @@
             }
             .smBtn input[type=submit] {
                 height: 30px;
-                width: 50px;
+                width: 55px;
                 border-radius: 5px;
                 text-align: center;
-                background-color: lightgreen;
-                color: green;
+                background-color: beige;
+                box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+                border: none;
+                color: black;
                 font-weight: bold;
+                cursor: pointer;
             }
         </style>
     </head>
@@ -109,15 +112,15 @@
             function vCheck() {
                 let inputs = document.f1;
                 if (!inputs.accuracy.value) {
-                    alert("첫번째 질문에 답하지 않았습니다.");
+                    alert("모든 문항에 답하지 않았습니다.");
                     return false;
                 }
                 if (!inputs.satisfaction.value) {
-                    alert("두번째 질문에 답하지 않았습니다.");
+                    alert("모든 문항에 답하지 않았습니다.");
                     return false;
                 }
                 if (!inputs.influence.value) {
-                    alert("세번째 질문에 답하지 않았습니다.");
+                    alert("모든 문항에 답하지 않았습니다.");
                     return false;
                 }
             }

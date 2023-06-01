@@ -60,12 +60,14 @@ function sendLink() {
      });
  }
 
-
-var instaShare = document.getElementById('insta_share');
-instaShare.addEventListener('click', function() {
-    var url = 'https://domestic-trip-sejxu.run.goorm.site'; // 공유할 URL
-    var instagramShareUrl = 'https://www.instagram.com/share?url=' + encodeURIComponent(url);
-    window.open(instagramShareUrl, '_blank');
+document.addEventListener('DOMContentLoaded', function () {
+    const twitterShare = document.querySelector('.twi_btn');
+    function shareTwitter() {
+        var sendText = "나의 여행 성향은?!"; // 전달할 텍스트
+        var sendUrl = "https://domestic-trip-tdyvg.run.goorm.site"; // 전달할 URL
+        window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(sendText) + "&url=" + encodeURIComponent(sendUrl));
+    }
+    twitterShare.addEventListener('click', shareTwitter);
 });
 
 copyBtn.addEventListener('click', copyUrl);

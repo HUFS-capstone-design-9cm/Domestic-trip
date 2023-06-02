@@ -1,76 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>만족도 조사</title>
-        <style>
-            body {
-                background-color: white;
-                font-weight: bold;
-            }
-            div {
-                text-align: center;
-            }
-            #Q1 {
-                padding-top: 10px;
-                margin-top: 10px;
-                line-height: 2.0;
-            }
-            #Q2 {
-                padding-top: 10px;
-                margin-top: 10px;
-                line-height: 2.0;
-            }
-            #Q3 {
-                padding-top: 10px;
-                margin-top: 10px;
-                line-height: 2.0;
-            }
-            input[type=radio] {
-                display: none;
-            }
-            .survey label{
-                font-size: 3em;
-                color: transparent;
-                text-shadow: 0 0 0 #f0f0f0;
-            }
-            .survey label:hover{
-                text-shadow: 0 0 0 yellow;
-            }
-            .survey label:hover ~ label{
-                text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
-            }
-            .survey input[type=radio]:checked ~ label{
-                text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
-            }
-            .star1, .star2, .star3{
-                display: inline-block;
-                direction: rtl;
-                border:0;
-            }
-            .smBtn {
-                direction: center;   
-            }
-            .smBtn input[type=submit] {
-                height: 30px;
-                width: 55px;
-                border-radius: 5px;
-                text-align: center;
-                background-color: beige;
-                box-shadow: 0px 0px 2px 2px rgb(0,0,0);
-                border: none;
-                color: black;
-                font-weight: bold;
-                cursor: pointer;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/survey.css' %}">
     </head>
     <body>
         <form class="survey" name="f1" method="post" action="/" onsubmit="return vCheck();">
             {% csrf_token %}
+            <div class="survey_img">
+                <img src="{% static 'image/survey' %}.png" alt="이미지 없음">
+            </div>
             <div id="Q1">
                 <span>
-                    본 테스트를 통해 나온 결과가 본인의 실제 성향과 얼마나 일치한다고 생각하십니까?<br>
+                    본 테스트를 통해 나온 결과가 본인의 실제 성향과 얼마나 일치한다고 생각하시나요?<br>
                 </span>
                 <div class="star1">
                     <input type="radio" name="accuracy" value="5" id="s1"><label for="s1">★</label>
@@ -82,7 +27,7 @@
             </div>
             <div id="Q2">
                 <span>
-                    본 테스트를 통해 추천된 여행지와 관광지들, 코스에 얼마나 만족하십니까?<br>
+                    본 테스트를 통해 추천된 여행지와 관광지들, 코스에 얼마나 만족하시나요?<br>
                 </span>
                 <div class="star2">
                     <input type="radio" name="satisfaction" value="5" id="s6"><label for="s6">★</label>

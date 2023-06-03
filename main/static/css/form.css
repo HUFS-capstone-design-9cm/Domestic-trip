@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url('../image/background1.png');
+    background-image: url('../image/background6.png');
     background-repeat: repeat-y;
     background-size: 100vw 100vh;
     background-color: beige;
@@ -24,6 +24,11 @@ body {
 }
 
 .test {
+    max-width: 600px;
+    height: 100vh;
+}
+
+.scene {
     max-width: 600px;
     height: 100vh;
 }

@@ -15,6 +15,19 @@ function scrollDown(top) {
 }
 
 $(function() {
+    $('.scene_next_btn').click(function(e){
+        let divs = $(this).parent().prev().children();
+        let present_top = $(this).parent().parent()[0].offsetTop;
+        e.preventDefault();
+        scrollDown(present_top);
+    });
+
+    $('.scene_prev_btn').click(function(e){
+        let present_top = $(this).parent().parent()[0].offsetTop;
+        e.preventDefault();
+        scrollUp(present_top);
+    });
+    
     $('.next_btn').click(function (e) {
         let divs = $(this).parent().prev().children();
         let present_top = $(this).parent().parent()[0].offsetTop;
@@ -46,4 +59,3 @@ $(function() {
         scrollTop: 0
     }, 500);
 });
-

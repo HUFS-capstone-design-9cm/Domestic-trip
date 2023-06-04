@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/survey.css' %}">
     </head>
     <body>
-        <form class="survey" name="f1" method="post" action="/" onsubmit="return vCheck();">
+        <form class="survey" name="f1" method="POST" action="/result/{{ traveler }}/" onsubmit="return vCheck();">
             {% csrf_token %}
             <div class="survey_img">
                 <img src="{% static 'image/survey' %}.png" alt="이미지 없음">

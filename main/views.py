@@ -5,20 +5,12 @@ import sys, json
 
 
 def index(request):
-    survey = Survey.objects.get(pk=1)
-    
-    if request.method == 'POST':
-        accuracy, satisfaction, influence = request.POST['accuracy'], request.POST['satisfaction'], request.POST['influence']
-        survey.accuracy += int(accuracy)
-        survey.satisfaction += int(satisfaction)
-        survey.influence += int(influence)
-        survey.save()
-        
     travelers = Traveler.objects.all()
-    
+    survey = Survey.objects.get(pk=1)
+
     context = {
-        'travelers' : travelers,
-        'count' : survey.count
+        'travelers': travelers,
+        'count': survey.count
     }
 
     return render(request, 'index.html', context=context)
@@ -27,7 +19,7 @@ def index(request):
 def form(request):
     questions = Question.objects.all()
     context = {
-        'questions' : questions
+        'questions': questions
     }
 
     return render(request, 'form.html', context=context)
@@ -42,7 +34,7 @@ def submit(request):
     # 성격 유형
     person = ''
 
-    counter = {'E': 0, 'I': 0, 'B': 0, 'R': 0, 'P': 0, 'J':0}
+    counter = {'E': 0, 'I': 0, 'B': 0, 'R': 0, 'P': 0, 'J': 0}
 
     print(f'POST: {request.POST}')
 
@@ -60,10 +52,10 @@ def submit(request):
             best_traveler = traveler
     survey.count += 1
     survey.save()
-    
+
     context = {
-        'traveler' : best_traveler,
-        'counter' : counter
+        'traveler': best_traveler,
+        'counter': counter
     }
     print(context)
     # print(best_traveler.pk)
@@ -71,25 +63,36 @@ def submit(request):
 
 
 def result(request, traveler_id):
+    if request.method == 'POST':
+        survey = Survey.objects.get(pk=1)
+        accuracy, satisfaction, influence = request.POST['accuracy'], request.POST['satisfaction'], request.POST['influence']
+        survey.accuracy += int(accuracy)
+        survey.satisfaction += int(satisfaction)
+        survey.influence += int(influence)
+        survey.save()
+
     traveler = Traveler.objects.get(pk=traveler_id)
     context = {
-        'traveler' : traveler,
-        'traveler_id' : traveler_id,
+        'traveler': traveler,
+        'traveler_id': traveler_id,
     }
 
     return render(request, 'result.html', context=context)
 
+
 def results(request, traveler_id):
     traveler = Traveler.objects.get(pk=traveler_id)
     context = {
-        'traveler' : traveler,
-        'traveler_id' : traveler_id,
+        'traveler': traveler,
+        'traveler_id': traveler_id,
     }
 
     return render(request, 'results.html', context=context)
 
 
 def search(request):
+    traveler_id = request.POST['traveler_id']
+    traveler = Traveler.objects.get(pk=traveler_id)
     if request.method == 'POST':
         selected_spots = request.POST.getlist('selected_spot')
 
@@ -99,26 +102,20 @@ def search(request):
     ]
 
     places = {
-        spot[2]: list(map(float, [spot[3], spot[4]]))
+        spot[0]: list(map(float, [spot[1], spot[2]]))
         for spot in selected_spot
     }
-
-    places['start'] = list(map(float, selected_spot[0][:2]))# 시작 지점 수정 필요
-    print(places)
-    
     regions = list(places.keys())
-    NUM = len(regions)
-    regions.remove('start')
-    departure = 'start'
-    sequence = NUM - len(regions)
-    distance = sys.maxsize
+    places['start'] = traveler.data['start']
+    NUM, sequence = len(regions)+1, 1
     lat, lng = places['start'][0], places['start'][1]
     routes = {'start': {'sequence': sequence,
-                        'lat': str(lat), 
-                        'lng': str(lng)}
-    }
+                        'lat': str(lat),
+                        'lng': str(lng)}}
 
+    departure = 'start'
     while len(regions) != 0:
+        distance = sys.maxsize
         for region in regions:
             temp = haversine(places[departure],
                             places[region],
@@ -130,7 +127,6 @@ def search(request):
         departure = ans
         regions.remove(ans)
         sequence = NUM - len(regions)
-        distance = sys.maxsize
         lat, lng = places[ans][0], places[ans][1]
         routes[ans] = {'sequence': sequence,
                        'lat': str(lat),
@@ -140,6 +136,7 @@ def search(request):
         'routes': routes,
         'route_js': json.dumps(routes),
         'selected_spots': selected_spots,
+        'traveler_id': traveler_id
     }
     return render(request, 'search.html', context=context)
 
@@ -153,4 +150,8 @@ def types(request):
 
 
 def survey(request):
-    return render(request, 'survey.html')
+    traveler = request.POST['traveler-pk']
+    context = {
+        'traveler': traveler
+    }
+    return render(request, 'survey.html', context=context)

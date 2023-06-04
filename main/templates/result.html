@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <!-- <meta name="viewprot" content="width=device-width, initial-scale=1.0"> -->
-
     <meta property="og:title" content="어쩌다 국내여행" />
     <meta property="og:image" content="" />
     <meta property="og:url" content="" />
@@ -63,7 +63,7 @@
                                                     <p class="prev-btn" onclick="showSlide('prev')">&lt;</p>
                                                     <h3>
                                                         <label for="spot-checkbox-{{ forloop.counter }}">
-                                                            <input type="checkbox" id="spot-checkbox-{{ forloop.counter }}" name="selected_spot" value="{{ traveler.data.start }}, {{ spot.name }}, {{ spot.coordinate }}">
+                                                            <input type="checkbox" id="spot-checkbox-{{ forloop.counter }}" name="selected_spot" value="{{ spot.name }}, {{ spot.coordinate }}">
                                                             {{ spot.name }}
                                                         </label>
                                                     </h3>
@@ -75,6 +75,7 @@
                                 {% endfor %}
                             </ul>
                         </div>
+                        <input type="hidden" name="traveler_id" value="{{ traveler_id }}">
                         <input class="search_btn" type="submit" value="경로 추천 받기">
                     </form>
                 </div>

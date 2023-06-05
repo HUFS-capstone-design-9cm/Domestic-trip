@@ -131,7 +131,6 @@ def search(request):
         routes[ans] = {'sequence': sequence,
                        'lat': str(lat),
                        'lng': str(lng)}
-
     context = {
         'routes': routes,
         'route_js': json.dumps(routes),

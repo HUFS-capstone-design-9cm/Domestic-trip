@@ -12,25 +12,35 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/search.css' %}">
 </head>
 <body>    
-    <div class="container">
-        <div id="map" style="width:500px;height:400px;"></div>
-        <h1>웹 페이지에 나타내보기</h1>
+    <section id="main_contents">
+        <div class="container">
+            <div class="map">
+                <h1>경로 추천</h1>
+                <div id="map" style="width:400px;height:300px;"></div>
+            </div>
+            <div class="route">
+                {% for spot in routes.keys %}
+                {{ spot }} 
+                {% if not forloop.last %}
+                ➡
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="question-box">
+                <!-- <h2>카카오 길찾기 OpenAPI를 이용</h2> -->
+                <ul id="names-q1">
+                </ul>
+            </div>
 
-        <hr/>
-
-        <div class="question-box">
-            <h2>카카오 길찾기 OpenAPI를 이용</h2>
-            <ul id="names-q1">
-            </ul>
+            <form class="survey" name="f1" method="POST" action="/survey/" onsubmit="return vCheck();">
+                {% csrf_token %}
+                <input type="hidden" name="traveler-pk" value="{{ traveler_id }}">
+                <div class="btn">
+                    <input class="survey_btn" type="submit" value="만족도 조사하기">
+                </div>        
+            </form>
         </div>
-        
-        <form class="survey" name="f1" method="POST" action="/survey/" onsubmit="return vCheck();">
-            {% csrf_token %}
-            <input type="hidden" name="traveler-pk" value="{{ traveler_id }}">
-            <input class="survey_btn" type="submit" value="제출">
-        </form>
-    </div>
-    
+    </section>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c963b5273576eb43b2c68c2088700c47"></script>
     <script>
         let routes = JSON.parse("{{ route_js | escapejs }}");

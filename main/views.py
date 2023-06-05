@@ -19,7 +19,7 @@ def index(request):
 def form(request):
     questions = Question.objects.all()
     context = {
-        'questions': questions
+        'questions': questions,
     }
 
     return render(request, 'form.html', context=context)

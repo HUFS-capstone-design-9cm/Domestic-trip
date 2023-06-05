@@ -11,10 +11,10 @@ class Traveler(models.Model):
     
 class Question(models.Model):
     num = models.IntegerField(unique=True)
-    content = models.CharField(max_length=100)
+    data = models.JSONField()
     
     def __str__(self):
-        return f'{self.num}. {self.content}'
+        return self.num
     
 class Choice(models.Model):
     content = models.CharField(max_length=100)

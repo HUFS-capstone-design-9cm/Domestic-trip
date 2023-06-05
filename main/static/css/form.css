@@ -5,6 +5,31 @@
     font-style: normal;
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-in-text {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-in-image {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 body {
     background-image: url('../image/background6.png');
     background-repeat: repeat-y;
@@ -119,4 +144,295 @@ button:hover, .submit_btn:hover {
 .radio-button:hover,
 input[type="radio"]:checked + .radio-button {
     background-color: #aacf88;
+}
+
+/* 장면1 */
+.container1 {
+    position: relative;
+    background-color: aliceblue;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-height: 100vh;
+    width: 70vw;
+    height: 99vh;
+    box-sizing: border-box;
+    border: 1px solid skyblue;
+    border-radius: 10px;
+
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.container1 img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+    .container1 {
+        width: 90%;
+    }
+}
+
+.t1 {
+    position: absolute;
+    top: 10%; left: 50%;
+    transform: translateX(-70%);
+    font-size: 25px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fade-in-text 2s ease-in-out 2s forwards;
+
+}
+.t2 {
+    position: absolute;
+    top: 18%; left: 50%;
+    transform: translateX(-30%);
+    font-size: 25px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fade-in-text 2s ease-in-out 3s forwards;
+
+}
+img {
+    height: 400px;
+    width: 400px;
+}
+.p1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(10%);
+
+    opacity: 0;
+    animation: fade-in-image 1s ease-in-out 4s forwards;
+}
+.p2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-65%);
+
+    opacity: 0;
+    animation: fade-in-image 1s ease-in-out 4s forwards;
+}
+.p3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-120%);
+
+    opacity: 0;
+    animation: fade-in-image 1s ease-in-out 4s forwards;
+}
+.button1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    opacity: 0;
+    animation: fade-in-text 1s ease-in-out 5.5s forwards;
+    cursor: pointer;
+}
+
+/* 장면2 */
+.container2 {
+    position: relative;
+    background-color: aliceblue;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-height: 100vh;
+    width: 70vw;
+    height: 99vh;
+    box-sizing: border-box;
+    border: 1px solid skyblue;
+    border-radius: 10px;
+    overflow: hidden;
+
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.container2 img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+    .container2 {
+        width: 90%;
+    }
+}
+
+.t3 {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-70%);
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fade-in-text 2s ease-in-out 2s forwards;
+
+}
+
+.t4 {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-30%);
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fade-in-text 2s ease-in-out 3s forwards;
+
+}
+
+img {
+    height: 500px;
+    width: 500px;
+}
+
+.p4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, 100%);
+
+    opacity: 0;
+    animation: fade-in-image 3s ease-in-out 4s forwards, 
+    carMoving 3s ease-in-out 4.5s forwards;
+}
+
+.button2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    opacity: 0;
+    animation: fade-in-text 1s ease-in-out 7s forwards;
+}
+
+/* 장면3 */
+.container3 {
+    position: relative;
+    background-color: aliceblue;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-height: 100vh;
+    width: 70vw;
+    height: 99vh;
+    box-sizing: border-box;
+    border: 1px solid skyblue;
+    border-radius: 10px;
+
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.container3 img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+    .container3 {
+        width: 90%;
+    }
+}
+
+.t5 {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-70%);
+    font-size: 25px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fade-in-text 2s ease-in-out 2s forwards;
+
+}
+
+.t6 {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-30%);
+    font-size: 25px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fade-in-text 2s ease-in-out 3s forwards;
+
+}
+
+img {
+    height: 300px;
+    width: 300px;
+}
+
+.p5 {
+    position: absolute;
+    top: 60%;
+    right: 7%;
+    /* transform: translate(-50%, -50%); */
+
+    opacity: 0;
+    animation: fade-in-image 1s ease-in-out 4s forwards;
+}
+.p6 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    opacity: 0;
+    animation: fade-in-image 1s ease-in-out 4s forwards;
+}
+.p7 {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    /* transform: translate(-50%, -50%); */
+
+    opacity: 0;
+    animation: fade-in-image 1s ease-in-out 4s forwards;
+}
+.p8 {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    /* transform: translate(-50%, -50%); */
+
+    opacity: 0;
+    animation: fade-in-image 1s ease-in-out 4s forwards;
+}
+.p9 {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    /* transform: translate(-50%, -50%); */
+
+    opacity: 0;
+    animation: fade-in-image 1s ease-in-out 4s forwards;
+}
+
+.button3 {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -30%);
+    opacity: 0;
+    animation: fade-in-text 1s ease-in-out 5s forwards;
 }

@@ -13,6 +13,7 @@ body {
     color: black;
     font-family: 'GmarketSansMedium';
     overflow: hidden;
+    touch-action: none;
 }
 
 #survey {

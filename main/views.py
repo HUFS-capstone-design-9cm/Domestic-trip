@@ -30,13 +30,12 @@ def submit(request):
     N = Question.objects.count()
     # 여행자 유형 수
     travelers = Traveler.objects.all()
-    survey = Survey.objects.get(pk=1)
     # 성격 유형
     person = ''
 
     counter = {'E': 0, 'I': 0, 'B': 0, 'R': 0, 'P': 0, 'J': 0}
 
-    print(f'POST: {request.POST}')
+    # print(f'POST: {request.POST}')
 
     for n in range(1, N+1):
         category = request.POST[f'question-{n}'][0]
@@ -50,8 +49,6 @@ def submit(request):
     for traveler in travelers:
         if traveler.data["personality"] == person:
             best_traveler = traveler
-    survey.count += 1
-    survey.save()
 
     context = {
         'traveler': best_traveler,
@@ -69,6 +66,7 @@ def result(request, traveler_id):
         survey.accuracy += int(accuracy)
         survey.satisfaction += int(satisfaction)
         survey.influence += int(influence)
+        survey.count += 1
         survey.save()
 
     traveler = Traveler.objects.get(pk=traveler_id)

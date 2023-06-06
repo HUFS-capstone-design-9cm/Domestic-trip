@@ -152,7 +152,7 @@
             let duration = (mise.duration/60).toFixed();
             // $("#names-q1").append(`<li>통행요금 : ${mise.fare.toll}원</li>`);
             // $("#names-q1").append(`<li>택시요금 : ${mise.fare.taxi}원</li>`);
-            $("#names-q1").append(`<li>✅ 전체거리 : ${mise.distance}m</li>`); 
+            $("#names-q1").append(`<li>✅ 전체거리 : ${mise.distance/1000}km</li>`);
             $("#names-q1").append(`<li>✅ 소요시간 : 약 ${duration}분</li>`); 
         
             }

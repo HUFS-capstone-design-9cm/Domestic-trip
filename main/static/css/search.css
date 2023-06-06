@@ -10,7 +10,7 @@ body {
     background-repeat: repeat-y;
     background-size: 100vw 100vh;
     background-attachment: fixed;
-    background-color: beige;
+    /* background-color: beige; */
     color: black;
     font-family: 'GmarketSansMedium';
     overflow: hidden;
@@ -22,8 +22,8 @@ body {
 
 h1 {
     font-size:25px;
-    padding-top: 50px;
-    padding-bottom: 20px;
+    /* padding-top: 50px; */
+    padding-bottom: 30px;
     text-align: center;
 }
 
@@ -74,9 +74,18 @@ ul {
 }
 
 .question-box {
-    padding-top: 20px;
+    padding-top: 40px;
+    padding-bottom: 20px;
 }
 
 .route {
     padding-top: 25px;
+}
+
+.route ul {
+    text-align: center;
+}
+
+.logo {
+    padding-top: 20px;
 }

@@ -20,9 +20,9 @@
             </div>
             <div class="route">
                 {% for spot in routes.keys %}
-                {{ spot }} 
+                <ul>{{ spot }}</ul>
                 {% if not forloop.last %}
-                ➡
+                    <ul>⬇️</ul>
                 {% endif %}
                 {% endfor %}
             </div>
@@ -36,9 +36,12 @@
                 {% csrf_token %}
                 <input type="hidden" name="traveler-pk" value="{{ traveler_id }}">
                 <div class="btn">
-                    <input class="survey_btn" type="submit" value="만족도 조사하기">
+                    <input class="survey_btn" type="submit" value="만족도 조사하기" style="font-weight: normal;">
                 </div>        
             </form>
+            <div class="logo">
+                <img src="{% static 'image/logo.png' %}" alt="logo" height="60px" width="100px">
+            </div>
         </div>
     </section>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c963b5273576eb43b2c68c2088700c47"></script>
@@ -147,10 +150,10 @@
             $("#names-q1").empty(); //화면에 출력 전에 지워주는 코드
             let mise = msg.routes[0].summary;
             let duration = (mise.duration/60).toFixed();
-            $("#names-q1").append(`<li>통행요금 : ${mise.fare.toll}원</li>`);
-            $("#names-q1").append(`<li>택시요금 : ${mise.fare.taxi}원</li>`);
-            $("#names-q1").append(`<li>전체거리 : ${mise.distance}m</li>`); 
-            $("#names-q1").append(`<li>소요시간 : 약 ${duration}분</li>`); 
+            // $("#names-q1").append(`<li>통행요금 : ${mise.fare.toll}원</li>`);
+            // $("#names-q1").append(`<li>택시요금 : ${mise.fare.taxi}원</li>`);
+            $("#names-q1").append(`<li>✅ 전체거리 : ${mise.distance}m</li>`); 
+            $("#names-q1").append(`<li>✅ 소요시간 : 약 ${duration}분</li>`); 
         
             }
             )

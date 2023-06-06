@@ -16,55 +16,14 @@
             <form action="/submit/" method="post">
                 {% csrf_token %}
                 {% for question in questions %}
-                {% if question.pk == 1 %}
-                    <div class="scene">
-                        <div class="container1">
-                            <span class="t1">여름방학을 맞은 당신,</span>
-                            <span class="t2">여행을 떠날까 하는데...</span>
-                            <img class="p1" src="{% static 'image/scene1_dino1.png' %}" alt="Image 1">
-                            <img class="p2" src="{% static 'image/scene1_dino2.png' %}" alt="Image 2">
-                            <img class="p3" src="{% static 'image/scene1_dino3.png' %}" alt="Image 3">
-                            <button class="button3">떠나자!</button>
-                            <div class="btn_wrap">
-                                <button class="scene_next_btn">다음</button>
-                            </div>
-                        </div>
-                    </div>
-                {% elif question.pk == 5 %}
-                    <div class="scene"> 
-                        <div class="container2">
-                            <span class="t3">설레는 마음을 앉고 당신은 기차를 기다립니다.</span>
-                            <span class="t4">마침 당신이 탈 기차가 들어오네요!</span>
-                            <img class="p4" src="{% static 'image/scene2_car1.png' %}" alt="Image 1">
-                            <button class="button2">기차에 오르기</button>
-                            <div class="btn_wrap btn_sort">
-                                <button class="scene_prev_btn">이전</button>
-                                <button class="scene_next_btn">다음</button>
-                            </div>
-                        </div>
-                    </div>
-                {% elif question.pk == 7 %}
-                    <div class="scene"> 
-                        <div class="container3">
-                            <span class="t5">드디어 목적지에 도착하였습니다.</span>
-                            <span class="t6">당신은 이곳저곳 둘러보려고 합니다.</span>
-                            <img class="p5" src="{% static 'image/scene3_dino1.png' %}" alt="Image 1">
-                            <img class="p6" src="{% static 'image/scene3_dino2.png' %}" alt="Image 2">
-                            <img class="p7" src="{% static 'image/scene3_dino3.png' %}" alt="Image 3">
-                            <img class="p8" src="{% static 'image/scene3_dino4.png' %}" alt="Image 4">
-                            <img class="p9" src="{% static 'image/scene3_dino5.png' %}" alt="Image 5">
-                            <button class="button3">가방 고쳐메기</button>
-                            <div class="btn_wrap btn_sort">
-                                <button class="scene_prev_btn">이전</button>
-                                <button class="scene_next_btn">다음</button>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
                 <div class="test"> 
                     <div class="question_container">
                         <h3 class="num">{{ question.num }} / {{ questions.count }}</h3>
-                        <h3 class="question">{{ question.content }}</h3>
+                        <ul>
+                            {% for line in question.data.content %}
+                                <h3 class="question">{{ line }}</h3>
+                            {% endfor %}
+                        </ul>
                         <div class="form_img">
                             <img src="{% static 'image/Q' %}{{ question.num }}.png" alt="이미지 없음">
                         </div>
@@ -96,7 +55,7 @@
                     {% if not forloop.last %}
                         <button class="next_btn">다음</button>
                     {% else %}
-                        <input type="submit" value="제출" class="submit_btn" />
+                        <input type="submit" value="제출" class="submit_btn" style="font-weight: normal;">
                     {% endif %}
                     </div>
                 </div>

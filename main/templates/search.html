@@ -15,12 +15,12 @@
     <section id="main_contents">
         <div class="container">
             <div class="map">
-                <h1>경로 추천</h1>
-                <div id="map" style="width:400px;height:300px;"></div>
+                <h1>🧭 경로 추천</h1>
+                <div id="map" style="width:600px;height:500px;"></div>
             </div>
             <div class="route">
                 {% for spot in routes.keys %}
-                <ul>{{ spot }}</ul>
+                <ul>📍 {{ spot }}</ul>
                 {% if not forloop.last %}
                     <ul>⬇️</ul>
                 {% endif %}
@@ -40,7 +40,7 @@
                 </div>        
             </form>
             <div class="logo">
-                <img src="{% static 'image/logo.png' %}" alt="logo" height="60px" width="100px">
+                <img src="{% static 'image/logo.png' %}" alt="logo" height="100px" width="200px">
             </div>
         </div>
     </section>

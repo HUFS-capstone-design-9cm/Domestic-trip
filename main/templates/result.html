@@ -33,9 +33,9 @@
                 <h3 class="title"><span id="nickname"></span>님의 유형은 {{ traveler.name }}?!</h3>
                 <ul>
                     {% for content in traveler.data.contents %}
-                    <li>
+                    <ul>
                         {{ content }}
-                    </li>
+                    </ul>
                     {% endfor %}
                 </ul>
             </div>
@@ -76,7 +76,9 @@
                             </ul>
                         </div>
                         <input type="hidden" name="traveler_id" value="{{ traveler_id }}">
-                        <input class="search_btn" type="submit" value="경로 추천 받기" style="font-weight: normal;">
+                        <div class="s-btn">
+                            <input class="search_btn" type="submit" value="경로 추천 받기" style="font-weight: normal;">
+                        </div>
                     </form>
                 </div>
             </div>
@@ -107,7 +109,7 @@
                 </div>
             </div>
             <div class="logo">
-                <img src="{% static 'image/logo.png' %}" alt="logo" height="60px" width="100px">
+                <img src="{% static 'image/logo.png' %}" alt="logo" height="100px" width="200px">
             </div>
             <p class="joguman">© 2023 Joguman, Inc. All Rights Reserved</p>
         </div>

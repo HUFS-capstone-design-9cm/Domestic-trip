@@ -5,6 +5,13 @@
     font-style: normal;
 }
 
+@font-face { 
+    font-family: 'GmarketSansBold'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
 @keyframes move {
     0% {
             transition: transform;
@@ -27,12 +34,12 @@ html {
 }
 
 body {
-    background-image: url("../image/background11.png");
+    background-image: url("../image/background_main.png");
     background-repeat: no-repeat;
-    background-size: 70vw 100vh;
+    background-size: 100vw 100vh;
     background-position: center;
     overflow: hidden;
-    touch-action: none; /* 아이폰 터비 비활성화 */
+    /* touch-action: pinch-zoom; */
     width: 100%;
     height: 100%;
     color: black;
@@ -53,29 +60,30 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    max-width: 500px;
+    max-width: 800px;
 }
 
 .main_title {
-    font-family: 'GmarketSansMedium';
-    font-weight: bold;
-    font-size: 50px;
+    font-family: 'GmarketSansBold';
+    font-size: 100px;
+    padding-top: 400px;
     padding-bottom: 15px;
     text-align: center;
     margin-top: 100px;
     color: black;
-    text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
+    /* text-shadow: -2px 0px white, 0px 2px white, 2px 0px white, 0px -2px white; */
 }
 
 .intro {
     text-align: center;
     padding-bottom: 40px;
     color: black;
-    text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white;
+    font-family: 'GmarketSansBold';    
+    /* text-shadow: -2px 0px white, 0px 2px white, 2px 0px white, 0px -2px white; */
 }
 
 .intro h1 {
-    font-size: 20px;
+    font-size: 50px;
     padding-bottom: 15px;
 }
 
@@ -86,8 +94,8 @@ body {
 
 .animation .image {
     border-radius: 30px;
-    height: 350px;
-    width: 550px;
+    height: 450px;
+    width: 650px;
     animation-name: move;
     animation-duration: 5s;
     animation-iteration-count: infinite;
@@ -104,9 +112,9 @@ body {
 
 .nick .name {
     font-family: 'GmarketSansMedium';
-    font-size: 16px;
-    width: 250px;
-    height: 40px;
+    font-size: 30px;
+    width: 400px;
+    height: 60px;
     border: 3px solid black;
     border-radius: 10px;
     box-shadow: 7px 7px 5px grey;
@@ -115,25 +123,25 @@ body {
 
 input[name=nickname]::placeholder {
     font-family: 'GmarketSansMedium';
-    font-size: 16px;
+    font-size: 30px;
     color: black;
     text-align: center;
 }
 
 .button {
     text-align: center;
+    padding-top: 10px;
     padding-bottom: 50px;
 }
 
 .button button {
     width: 300px;
-    height: 50px;
+    height: 60px;
     padding: 5px;
     border-style: none;
     border-radius: 10px;
     font-family: 'GmarketSansMedium';
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 25px;
     background-color: white;
     color: black;
     cursor: pointer;
@@ -149,16 +157,15 @@ input[name=nickname]::placeholder {
 }
 
 .result_data .data_wrap {
-    width: 270px;
+    width: 600px;
     padding: 10px;
     margin-bottom: 10px;
 }
 
 .result_data h3 {
     text-align: center;
-    font-size: 15px;
-    font-weight: bold;
-    padding-top: 20px;
+    font-size: 30px;
+    padding-top: 40px;
 }
 
 .logo {

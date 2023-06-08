@@ -35,8 +35,6 @@ def submit(request):
 
     counter = {'E': 0, 'I': 0, 'B': 0, 'R': 0, 'P': 0, 'J': 0}
 
-    # print(f'POST: {request.POST}')
-
     for n in range(1, N+1):
         category = request.POST[f'question-{n}'][0]
         counter[category] += 1
@@ -54,7 +52,7 @@ def submit(request):
         'traveler': best_traveler,
         'counter': counter
     }
-    print(context)
+    # print(context)
     # print(best_traveler.pk)
     return redirect(f'/result/{best_traveler.pk}')
 

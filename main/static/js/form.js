@@ -47,12 +47,12 @@ $(function() {
     });
 
     $('#form').submit(function(e) {
-        let radios = $('input[type=radio]:checked');
-        if (radios.length < 3) {
+        let radios = $('input[type=radio]:checked').length;
+        if (radios < 9) {
             alert('모든 문항에 답하지 않았습니다.');
             return false;
         }
-        return false;
+        return true;
     });
 
     $('html, body').animate({

@@ -1,16 +1,19 @@
 from django.shortcuts import render, redirect
 from haversine import haversine
-from .models import Traveler, Question, Choice, Survey
+from .models import Traveler, Question, Choice
 import sys, json
 
 
 def index(request):
     travelers = Traveler.objects.all()
-    survey = Survey.objects.get(pk=1)
+    
+    count = 0
+    for traveler in travelers:
+        count += traveler.count
 
     context = {
         'travelers': travelers,
-        'count': survey.count
+        'count': count
     }
 
     return render(request, 'index.html', context=context)
@@ -58,16 +61,16 @@ def submit(request):
 
 
 def result(request, traveler_id):
-    if request.method == 'POST':
-        survey = Survey.objects.get(pk=1)
-        accuracy, satisfaction, influence = request.POST['accuracy'], request.POST['satisfaction'], request.POST['influence']
-        survey.accuracy += int(accuracy)
-        survey.satisfaction += int(satisfaction)
-        survey.influence += int(influence)
-        survey.count += 1
-        survey.save()
-
     traveler = Traveler.objects.get(pk=traveler_id)
+    if request.method == 'POST':
+        accuracy, satisfaction, influence = request.POST['accuracy'], request.POST['satisfaction'], request.POST['influence']
+        survey = traveler.data["survey"]
+        survey["accuracy"].append(int(accuracy))
+        survey["satisfaction"].append(int(satisfaction))
+        survey["influence"].append(int(influence))
+        traveler.count += 1
+        traveler.save()
+        # print(traveler.data["survey"])
     context = {
         'traveler': traveler,
         'traveler_id': traveler_id,

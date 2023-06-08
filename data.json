@@ -111,7 +111,7 @@
     "model": "main.choice",
     "pk": 4,
     "fields": {
-        "content": "지루한 일상을 벗어나 오게 된 여행인데 친구들과 즐겁게 다녀올거야!",
+        "content": "지루한 일상을 벗어나 오게 된 여행인데 친구들과 다녀올거야!",
         "question_id": 2,
         "category": "E"
     }

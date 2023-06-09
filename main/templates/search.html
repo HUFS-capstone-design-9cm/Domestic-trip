@@ -5,7 +5,14 @@
 	<meta charset="utf-8"/>
     
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-	<title>경로 추천</title>
+	<title>어쩌다 국내여행</title>
+    <style>
+        .label {margin-bottom: 96px;}
+        .label * {display: inline-block;vertical-align: top;}
+        .label .left {background: url("https://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+        .label .center {background: url(https://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+        .label .right {background: url("https://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+    </style>
     <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
@@ -20,7 +27,11 @@
             </div>
             <div class="route">
                 {% for spot in routes.keys %}
-                <ul>📍 {{ spot }}</ul>
+                {% if forloop.first %}
+                    <ul>📍 출발지(터미널)</ul>
+                {% else %}
+                    <ul>📍 {{ spot }}</ul>
+                {% endif %}
                 {% if not forloop.last %}
                     <ul>⬇️</ul>
                 {% endif %}
@@ -100,21 +111,24 @@
                     position: markerPosition,
                 });
                 
-                var infowindow = new kakao.maps.InfoWindow({
-                    content: route // 인포윈도우에 표시할 내용
+                // 마커가 지도 위에 표시되도록 설정합니다
+                marker.setMap(map);
+                
+                // 커스텀 오버레이에 표시할 내용입니다     
+                // HTML 문자열 또는 Dom Element 입니다 
+                var content = '<div class ="label"><span class="left"></span><span class="center">'+route+'</span><span class="right"></span></div>';
+
+                // 커스텀 오버레이가 표시될 위치입니다 
+                var position = new kakao.maps.LatLng(routes[route].lat, routes[route].lng);  
+
+                // 커스텀 오버레이를 생성합니다
+                var customOverlay = new kakao.maps.CustomOverlay({
+                    position: position,
+                    content: content   
                 });
 
-                (function(marker, infowindow) {
-                    // 마커에 mouseover 이벤트를 등록하고 마우스 오버 시 인포윈도우를 표시합니다 
-                    kakao.maps.event.addListener(marker, 'mouseover', function() {
-                        infowindow.open(map, marker);
-                    });
-
-                    // 마커에 mouseout 이벤트를 등록하고 마우스 아웃 시 인포윈도우를 닫습니다
-                    kakao.maps.event.addListener(marker, 'mouseout', function() {
-                        infowindow.close();
-                    });
-                })(marker, infowindow);
+                // 커스텀 오버레이를 지도에 표시합니다
+                customOverlay.setMap(map);
             }
             
             

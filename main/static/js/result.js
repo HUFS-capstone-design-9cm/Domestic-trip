@@ -30,10 +30,17 @@ function sendLink() {
              title: '어쩌다 국내여행',
              description: '나의 여행 성향은?',
              imageUrl:
+<<<<<<< HEAD
                  'https://capstone-design-drmij.run.goorm.site',
              link: {
                  mobileWebUrl: 'https://capstone-design-drmij.run.goorm.site',
                  webUrl: 'https://capstone-design-drmij.run.goorm.site',
+=======
+                 'http://domestic-trip.com',
+             link: {
+                 mobileWebUrl: 'http://domestic-trip.com',
+                 webUrl: 'http://domestic-trip.com',
+>>>>>>> 5f68440ccb7b639b4ca7021f490c0bac1ae7f94d
              },
          },
          social: {
@@ -52,8 +59,13 @@ function sendLink() {
          {
              title: '테스트 하러가기',
              link: {
+<<<<<<< HEAD
                  webUrl: 'https://capstone-design-drmij.run.goorm.site',
                  mobileWebUrl: 'https://capstone-design-drmij.run.goorm.site',
+=======
+                 webUrl: 'http://domestic-trip.com',
+                 mobileWebUrl: 'http://domestic-trip.com',
+>>>>>>> 5f68440ccb7b639b4ca7021f490c0bac1ae7f94d
              },
          },
          ],
@@ -64,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const twitterShare = document.querySelector('.twi_btn');
     function shareTwitter() {
         var sendText = "나의 여행 성향은?!"; // 전달할 텍스트
-        var sendUrl = "https://domestic-trip-tdyvg.run.goorm.site"; // 전달할 URL
+        var sendUrl = "http://www.domestic-trip.com"; // 전달할 URL
         window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(sendText) + "&url=" + encodeURIComponent(sendUrl));
     }
     twitterShare.addEventListener('click', shareTwitter);

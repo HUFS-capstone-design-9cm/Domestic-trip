@@ -20,7 +20,7 @@ function copyUrl() {
 }
 
 
-Kakao.init('5c4a5c301aa64f144b7d6978d3c34c31');
+Kakao.init('c963b5273576eb43b2c68c2088700c47');
 
 function sendLink() {
      let result_url = window.location.href;
@@ -30,10 +30,10 @@ function sendLink() {
              title: '어쩌다 국내여행',
              description: '나의 여행 성향은?',
              imageUrl:
-                 'http://www.domestic-trip.com',
+                 'http://domestic-trip.com',
              link: {
-                 mobileWebUrl: 'http://www.domestic-trip.com',
-                 webUrl: 'http://www.domestic-trip.com',
+                 mobileWebUrl: 'http://domestic-trip.com',
+                 webUrl: 'http://domestic-trip.com',
              },
          },
          social: {
@@ -52,8 +52,8 @@ function sendLink() {
          {
              title: '테스트 하러가기',
              link: {
-                 webUrl: 'http://www.domestic-trip.com',
-                 mobileWebUrl: 'http://www.domestic-trip.com',
+                 webUrl: 'http://domestic-trip.com',
+                 mobileWebUrl: 'http://domestic-trip.com',
              },
          },
          ],

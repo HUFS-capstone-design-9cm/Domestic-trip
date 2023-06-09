@@ -20,7 +20,7 @@ function copyUrl() {
 }
 
 
-Kakao.init('0eca249734a4c539f4a34013bdea6ce0');
+Kakao.init('5c4a5c301aa64f144b7d6978d3c34c31');
 
 function sendLink() {
      let result_url = window.location.href;
@@ -30,10 +30,10 @@ function sendLink() {
              title: '어쩌다 국내여행',
              description: '나의 여행 성향은?',
              imageUrl:
-                 'https://domestic-trip-sejxu.run.goorm.site',
+                 'http://www.domestic-trip.com',
              link: {
-                 mobileWebUrl: 'https://domestic-trip-sejxu.run.goorm.site',
-                 webUrl: 'https://domestic-trip-sejxu.run.goorm.site',
+                 mobileWebUrl: 'http://www.domestic-trip.com',
+                 webUrl: 'http://www.domestic-trip.com',
              },
          },
          social: {
@@ -52,8 +52,8 @@ function sendLink() {
          {
              title: '테스트 하러가기',
              link: {
-                 webUrl: 'https://domestic-trip-sejxu.run.goorm.site',
-                 mobileWebUrl: 'https://domestic-trip-sejxu.run.goorm.site',
+                 webUrl: 'http://www.domestic-trip.com',
+                 mobileWebUrl: 'http://www.domestic-trip.com',
              },
          },
          ],
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const twitterShare = document.querySelector('.twi_btn');
     function shareTwitter() {
         var sendText = "나의 여행 성향은?!"; // 전달할 텍스트
-        var sendUrl = "https://domestic-trip-tdyvg.run.goorm.site"; // 전달할 URL
+        var sendUrl = "http://www.domestic-trip.com"; // 전달할 URL
         window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(sendText) + "&url=" + encodeURIComponent(sendUrl));
     }
     twitterShare.addEventListener('click', shareTwitter);

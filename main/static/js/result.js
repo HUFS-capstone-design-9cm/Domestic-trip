@@ -20,7 +20,7 @@ function copyUrl() {
 }
 
 
-Kakao.init('0eca249734a4c539f4a34013bdea6ce0');
+Kakao.init('c963b5273576eb43b2c68c2088700c47');
 
 function sendLink() {
      let result_url = window.location.href;
@@ -30,10 +30,10 @@ function sendLink() {
              title: '어쩌다 국내여행',
              description: '나의 여행 성향은?',
              imageUrl:
-                 'https://domestic-trip-sejxu.run.goorm.site',
+                 'https://capstone-design-drmij.run.goorm.site',
              link: {
-                 mobileWebUrl: 'https://domestic-trip-sejxu.run.goorm.site',
-                 webUrl: 'https://domestic-trip-sejxu.run.goorm.site',
+                 mobileWebUrl: 'https://capstone-design-drmij.run.goorm.site',
+                 webUrl: 'https://capstone-design-drmij.run.goorm.site',
              },
          },
          social: {
@@ -52,8 +52,8 @@ function sendLink() {
          {
              title: '테스트 하러가기',
              link: {
-                 webUrl: 'https://domestic-trip-sejxu.run.goorm.site',
-                 mobileWebUrl: 'https://domestic-trip-sejxu.run.goorm.site',
+                 webUrl: 'https://capstone-design-drmij.run.goorm.site',
+                 mobileWebUrl: 'https://capstone-design-drmij.run.goorm.site',
              },
          },
          ],

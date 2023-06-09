@@ -9,6 +9,19 @@ class Traveler(models.Model):
     def __str__(self):
         return self.name
     
+    def show_survey(self):
+        results = ['accuracy', 'satisfaction', 'influence']
+        survey = self.data["survey"]
+        count = 0
+        print(f'{self.name}')
+        for result in results:
+            count = survey[result].count(1) + survey[result].count(2)
+            if count > len(survey[result])/2:
+                print(f'- {result}: 목표 미달성')
+            else:
+                print(f'- {result}: 목표 충족')
+        print('----------------------')
+    
 class Question(models.Model):
     num = models.IntegerField(unique=True)
     data = models.JSONField()

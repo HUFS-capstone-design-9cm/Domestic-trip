@@ -185,8 +185,9 @@ button {
 
 .spots li h3 {
     font-family: 'GmarketSansMedium';
-    font-size: 22px;
+    font-size: 25px;
     text-align: center;
+    justify-content: center;
     line-height: 1.5;
     padding: 0 10px 20px;
 }
@@ -390,10 +391,14 @@ button {
 .prev-btn,
 .next-btn {
     font-family: 'GmarketSansBold';
-    font-size: 30px;
     background-color: transparent;
     cursor: pointer;
     color: #000;
+}
+
+svg {
+    width: 35px;
+    height: 35px;
 }
 
 .search_btn {

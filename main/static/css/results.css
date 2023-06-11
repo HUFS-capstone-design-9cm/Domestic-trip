@@ -177,7 +177,7 @@ button {
 
 .spots li h3 {
     font-family: 'GmarketSansMedium';
-    font-size: 22px;
+    font-size: 25px;
     text-align: center;
     line-height: 1.5;
     padding: 0 10px 20px;
@@ -330,4 +330,9 @@ button {
     background-color: transparent;
     cursor: pointer;
     color: #000;
+}
+
+svg {
+    width: 35px;
+    height: 35px;
 }

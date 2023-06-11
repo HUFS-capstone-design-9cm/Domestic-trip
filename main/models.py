@@ -63,9 +63,11 @@ class Traveler(models.Model):
             accuracy = sum(survey['accuracy'])
             satisfaction = sum(survey['satisfaction'])
             influence = sum(survey['influence'])
+            print(traveler.name)
             print(accuracy/count)
             print(satisfaction/count)
             print(influence/count)
+            print('=========================')
 
 
 class Question(models.Model):

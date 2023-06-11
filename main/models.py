@@ -39,6 +39,21 @@ class Traveler(models.Model):
         print(satisfaction, satisfaction/count)
         print(influence, influence/count)
 
+    def get_mean(self):
+        travelers = Traveler.objects.all()
+        accuracy = 0
+        satisfaction = 0
+        influence = 0
+        count = 0
+        for traveler in travelers:
+            count += traveler.count
+            survey = traveler.data["survey"]
+            accuracy += sum(survey['accuracy'])
+            satisfaction += sum(survey['satisfaction'])
+            influence += sum(survey['influence'])
+        print(accuracy/count)
+        print(satisfaction/count)
+        print(influence/count)
 
 class Question(models.Model):
     num = models.IntegerField(unique=True)
